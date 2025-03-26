@@ -2,4 +2,4 @@
 - [Getting Started](getting-started.md)
 - [Usage Guide](usage.md)
 - [Templates](templates.md)
-- [Contributing](../CONTRIBUTING.md)
+- [Contributing](contributing.md)
