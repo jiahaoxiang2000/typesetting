@@ -1,0 +1,55 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - "v*" # This workflow will run when any tag starting with 'v' is pushed
+
+# Add permissions configuration
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # We need full history to get commit messages
+
+      - name: Get previous tag
+        id: previoustag
+        run: |
+          echo "PREVIOUS_TAG=$(git describe --tags --abbrev=0 $(git rev-list --tags --skip=1 --max-count=1) 2>/dev/null || echo '')" >> $GITHUB_ENV
+          echo "CURRENT_TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
+      - name: Generate release notes
+        id: generate_notes
+        run: |
+          if [ -n "$PREVIOUS_TAG" ]; then
+            echo "RELEASE_NOTES<<EOF" >> $GITHUB_ENV
+            echo "## Changes since $PREVIOUS_TAG" >> $GITHUB_ENV
+            echo "" >> $GITHUB_ENV
+            git log --pretty=format:"* %s (%an)" $PREVIOUS_TAG..$CURRENT_TAG >> $GITHUB_ENV
+            echo "" >> $GITHUB_ENV
+            echo "EOF" >> $GITHUB_ENV
+          else
+            echo "RELEASE_NOTES<<EOF" >> $GITHUB_ENV
+            echo "## Initial Release" >> $GITHUB_ENV
+            echo "" >> $GITHUB_ENV
+            git log --pretty=format:"* %s (%an)" >> $GITHUB_ENV
+            echo "" >> $GITHUB_ENV
+            echo "EOF" >> $GITHUB_ENV
+          fi
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Release ${{ env.CURRENT_TAG }}
+          body: ${{ env.RELEASE_NOTES }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
