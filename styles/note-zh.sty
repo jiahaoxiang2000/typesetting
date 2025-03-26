@@ -29,6 +29,7 @@
 %% ============================================
 \RequirePackage{multicol}
 \RequirePackage{listings}
+\RequirePackage{tocloft} % Add tocloft for TOC customization
 
 %% ============================================
 %% Hyperlink and PDF properties
@@ -66,11 +67,31 @@
 %% Title formatting
 %% ============================================
 \renewcommand{\maketitle}{
+  \pagenumbering{roman} % Start with Roman numerals for front matter
   \begin{center}
     \LARGE\bfseries\thetitle\\[0.5em]
     \large\today
   \end{center}
+  \vspace{1em}
+  \tableofcontents
+  \newpage
+  \pagenumbering{arabic} % Switch to Arabic numerals for main content
+  \setcounter{page}{1} % Reset page counter to 1
 }
+
+%% ============================================
+%% Table of Contents customization
+%% ============================================
+\renewcommand{\contentsname}{Content} % Set the TOC name to "目录" (Chinese for "Contents")
+\renewcommand{\cfttoctitlefont}{\LARGE\bfseries\sffamily} % Left align TOC title with proper spacing
+\renewcommand{\cftaftertoctitle}{\hspace*{\fill}\vspace{0.5em}\hrule\vspace{1em}} % Center line after TOC title
+\setlength{\cftbeforetoctitleskip}{1em} % Space before TOC title
+\setlength{\cftaftertoctitleskip}{1em} % Space after TOC title
+
+\renewcommand{\cftsecfont}{\bfseries} % Bold section titles
+\renewcommand{\cftsecpagefont}{\bfseries} % Bold page numbers for sections
+\setlength{\cftbeforesecskip}{0.5em} % Space between section entries
+\setlength{\cftparskip}{0.2em} % Paragraph spacing in TOC
 
 %% ============================================
 %% Header and footer configuration
