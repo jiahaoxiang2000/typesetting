@@ -1,0 +1,108 @@
+\documentclass{beamer}
+\usepackage{../styles/slide-zh}
+
+% Document information
+\title{幻灯片样例演示}
+\subtitle{使用 slide-zh 样式}
+\author{isomo}
+% \institute{机构名称}
+\date{\today}
+
+\begin{document}
+
+% Title frame
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Outline frame
+\begin{frame}{大纲}
+  \tableofcontents
+\end{frame}
+
+% Introduction
+\section{介绍}
+\begin{frame}{介绍}
+  \begin{itemize}
+    \item 这是一个使用 \texttt{slide-zh.sty} 的演示
+    \item 支持中文排版和格式
+    \item 内置了多种实用的宏包
+  \end{itemize}
+\end{frame}
+
+% Special boxes
+\section{特殊文本框}
+\begin{frame}{特殊文本框}
+  \begin{infobox}
+    这是一个信息框，用于显示重要信息。
+  \end{infobox}
+
+  \vspace{0.5cm}
+
+  \begin{warningbox}
+    这是一个警告框，用于提醒注意事项。
+  \end{warningbox}
+
+  \vspace{0.5cm}
+
+  \begin{notebox}
+    这是一个笔记框，用于补充说明。
+  \end{notebox}
+\end{frame}
+
+% Math example
+\section{数学公式}
+\begin{frame}{数学公式示例}
+  爱因斯坦的质能方程:
+  \begin{equation}
+    E = mc^2
+  \end{equation}
+
+  麦克斯韦方程组:
+  \begin{align}
+    \nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \\
+    \nabla \cdot \vec{B} &= 0 \\
+    \nabla \times \vec{E} &= -\frac{\partial \vec{B}}{\partial t} \\
+    \nabla \times \vec{B} &= \mu_0\vec{J} + \mu_0\varepsilon_0\frac{\partial \vec{E}}{\partial t}
+  \end{align}
+\end{frame}
+
+% Tables
+\section{表格}
+\begin{frame}{表格示例}
+  \begin{table}
+    \centering
+    \begin{tabular}{l|c|r}
+      \toprule
+      左对齐 & 居中 & 右对齐 \\
+      \midrule
+      数据1 & 数据2 & 数据3 \\
+      长文本 & 短文本 & 100 \cite{ctex2020manual}\\
+      \bottomrule
+    \end{tabular}
+    \caption{简单表格示例}
+  \end{table}
+\end{frame}
+
+\section{参考文献}
+
+\begin{frame}
+  \frametitle{参考文献}
+  \bibliographystyle{alpha}
+  \bibliography{references}
+\end{frame}
+
+% Thank you slide
+\begin{frame}
+  \centering
+  \LARGE 谢谢观看！
+
+  \vspace{1cm}
+  \normalsize
+  % {\large \faEnvelope} \texttt{email@example.com}
+
+  % \vspace{0.5cm}
+  % {\large \faGlobe} \texttt{www.example.com}
+\end{frame}
+
+\end{document}

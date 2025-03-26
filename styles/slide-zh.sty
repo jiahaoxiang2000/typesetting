@@ -1,0 +1,156 @@
+\ProvidesPackage{slide-zh}[2024/02/17 Custom style for Chinese presentations]
+
+%% ============================================
+%% Presentation and layout packages
+%% ============================================
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{pdfpages}
+\usepackage{multicol}
+
+%% ============================================
+%% Math and graphics support
+%% ============================================
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+% Load TikZ only when needed to improve compilation speed
+\usepackage{tikz}
+% Load pgfplots with minimal settings for faster compilation
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+%% ============================================
+%% Table and figure enhancements
+%% ============================================
+\usepackage{booktabs}
+\usepackage{subcaption}
+\usepackage{multirow}
+
+%% ============================================
+%% Presentation-specific packages
+%% ============================================
+% Use simpler tcolorbox settings for faster compilation
+\usepackage[most]{tcolorbox}
+\usepackage{animate}
+\usepackage{multimedia}
+\usepackage{listings}
+\usepackage{enumitem}
+
+%% ============================================
+%% Reference and citation support
+%% ============================================
+\usepackage{url}         % For formatting URLs
+\usepackage{doi}         % For handling DOIs
+
+%% ============================================
+%% Hyperlink and PDF properties
+%% ============================================
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=blue,
+  urlcolor=blue,
+  citecolor=blue
+}
+
+%% ============================================
+%% Chinese language support with more robust font settings
+%% ============================================
+\usepackage{ctex}
+
+% Improved Chinese font configuration with fallbacks
+\setCJKmainfont{STSong}
+\setCJKsansfont{STKaiti}  % Better sans-serif font for Chinese
+\setCJKmonofont{STFangsong}  % Better monospace font for Chinese
+
+%% ============================================
+%% Beamer theme and appearance
+%% ============================================
+% If used with beamer class, these settings will help customize it
+\AtBeginDocument{%
+  \@ifclassloaded{beamer}{%
+    % Beamer-specific settings
+    \usetheme{Madrid}
+    \usecolortheme{dolphin}
+    \setbeamertemplate{navigation symbols}{}  % Hide navigation symbols
+    \setbeamertemplate{caption}[numbered]     % Numbered captions
+
+    % Customize beamer colors for Chinese presentations
+    \setbeamercolor{title}{fg=black}
+    \setbeamercolor{frametitle}{fg=black, bg=lightgray!20}
+    \setbeamercolor{section in toc}{fg=black}
+
+    % Footer configuration for beamer
+    \setbeamertemplate{footline}{%
+      \leavevmode%
+      \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+          \usebeamerfont{author in head/foot}\insertshortauthor
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+          \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+          \usebeamerfont{date in head/foot}\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+      \end{beamercolorbox}}%
+      \vskip0pt%
+    }
+  }{}%
+}
+
+%% ============================================
+%% Optimized block environments for faster compilation
+%% ============================================
+\newtcolorbox{infobox}{
+  colback=blue!5!white,
+  colframe=blue!75!black,
+  title=Information,
+  boxrule=0.5pt
+}
+
+\newtcolorbox{warningbox}{
+  colback=orange!5!white,
+  colframe=orange!75!black,
+  title=Warning,
+  boxrule=0.5pt
+}
+
+\newtcolorbox{notebox}{
+  colback=green!5!white,
+  colframe=green!75!black,
+  title=Note,
+  boxrule=0.5pt
+}
+
+%% ============================================
+%% Misc utilities
+%% ============================================
+\usepackage{soul} % For highlighting text
+\usepackage{fontawesome5} % For icons in presentations
+
+%% ============================================
+%% Custom macros import (only if files exist)
+%% ============================================
+\IfFileExists{../macros/math-macros}{\input{../macros/math-macros}}{}
+\IfFileExists{../macros/formatting-macros}{\input{../macros/formatting-macros}}{}
+
+% For standalone slide compilations (without beamer)
+\AtBeginDocument{%
+  \@ifclassloaded{beamer}{}{%
+    % Non-beamer document settings
+    \geometry{margin=0.5in, paperheight=7.5in, paperwidth=10in} % Good aspect ratio for slides
+
+    % Title formatting for non-beamer slides
+    \renewcommand{\maketitle}{%
+      \begin{center}
+        \LARGE\bfseries\thetitle\\[0.5em]
+        \large\theauthor\\[0.3em]
+        \normalsize\today
+      \end{center}
+      \vspace{1em}
+    }
+  }%
+}
