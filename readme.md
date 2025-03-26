@@ -41,7 +41,7 @@ This project provides tools and templates for high-quality document typesetting 
 
 ## Usage
 
-here to see the `docs` directory for detailed usage instructions.
+Check out our [online documentation](https://jiahaoxiang2000.github.io/typesetting/) for detailed usage instructions.
 
 ## Directory Structure
 
@@ -50,7 +50,8 @@ typesetting/
 ├── styles/          # Custom style files
 ├── macros/          # LaTeX macros
 ├── examples/        # Example documents
-└── docs/            # Documentation
+├── docs/            # Documentation (Docsify)
+└── .github/         # GitHub Actions workflows
 ```
 
 ## Contributing
