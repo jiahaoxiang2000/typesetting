@@ -41,38 +41,12 @@ This project provides tools and templates for high-quality document typesetting 
 
 ## Usage
 
-### Basic Document Creation
-
-```latex
-\documentclass{article}
-\usepackage{our-typesetting}
-
-\begin{document}
-\title{Your Document Title}
-\author{Your Name}
-\date{\today}
-\maketitle
-
-\section{Introduction}
-Your content here...
-
-\end{document}
-```
-
-### Building Documents
-
-```bash
-pdflatex document.tex
-bibtex document  # if bibliography is used
-pdflatex document.tex
-pdflatex document.tex  # run twice for references
-```
+here to see the `docs` directory for detailed usage instructions.
 
 ## Directory Structure
 
 ```
 typesetting/
-├── templates/       # Document templates
 ├── styles/          # Custom style files
 ├── macros/          # LaTeX macros
 ├── examples/        # Example documents
