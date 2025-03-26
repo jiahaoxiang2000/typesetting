@@ -3,6 +3,10 @@
 % Common math operators
 \DeclareMathOperator{\arctg}{arctg}
 \DeclareMathOperator{\arcctg}{arcctg}
+\DeclareMathOperator{\dif}{d} % Differential operator
+\DeclareMathOperator{\Tr}{Tr} % Trace operator
+\DeclareMathOperator{\diag}{diag} % Diagonal operator
+\DeclareMathOperator{\rank}{rank} % Rank operator
 
 % Shorthand commands
 \newcommand{\R}{\mathbb{R}}         % Real numbers
@@ -14,8 +18,16 @@
 % Vector notation
 \newcommand{\vecr}[1]{\vec{#1}}    % Vector
 \newcommand{\mtrx}[1]{\mathbf{#1}} % Matrix
+\newcommand{\vect}[1]{\boldsymbol{#1}} % Vector notation
+\newcommand{\mat}[1]{\mathbf{#1}} % Matrix notation
+\newcommand{\transp}[1]{{#1}^{\top}} % Transpose notation
 
 % Probability and statistics
 \newcommand{\E}{\mathbb{E}}         % Expected value
 \newcommand{\Var}{\mathrm{Var}}     % Variance
 \newcommand{\Cov}{\mathrm{Cov}}     % Covariance
+
+% Calculus shortcuts
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}} % Partial derivative
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}} % Second partial derivative
+\newcommand{\dd}[2]{\frac{d #1}{d #2}} % Total derivative

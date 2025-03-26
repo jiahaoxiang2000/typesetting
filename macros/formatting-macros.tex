@@ -2,7 +2,6 @@
 
 % Text highlighting and emphasis
 \newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
-\newcommand{\note}[1]{\marginnote{\footnotesize\itshape #1}}
 \newcommand{\highlight}[1]{\colorbox{yellow}{#1}}
 
 % Specialized text formatting
@@ -18,3 +17,10 @@
     \par\raggedleft--- #2
   \end{quote}
 }
+
+%% ===============================================
+%% Custom formatting macros for Chinese documents
+%% ===============================================
+
+% Check if \note is already defined before defining it
+\providecommand{\mynote}[1]{\textbf{注：}#1} % Use \mynote instead of \note to avoid conflicts
