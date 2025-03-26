@@ -56,7 +56,7 @@ typesetting/
 
 ## Contributing
 
-Contributions are welcome! Please see our [Contributing Guidelines](./docs/CONTRIBUTING.md) for details.
+Contributions are welcome! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
 ## License
 
