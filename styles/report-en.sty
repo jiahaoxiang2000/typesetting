@@ -1,0 +1,30 @@
+\ProvidesPackage{our-typesetting}[2023/06/01 Custom typesetting package]
+
+% Load required packages
+\usepackage{amsmath,amsfonts,amssymb}  % Math support
+\usepackage{graphicx}                  % Image support
+\usepackage{hyperref}                  % Hyperlinks
+\usepackage{booktabs}                  % Better tables
+\usepackage{microtype}                 % Typography improvements
+\usepackage{geometry}                  % Page geometry
+\usepackage{setspace}                  % Line spacing
+\usepackage{inputenc}                  % Input encoding
+\usepackage{fontenc}                   % Font encoding
+\usepackage{xcolor}                    % Color support
+
+% Page setup
+\geometry{margin=1in}
+\onehalfspacing
+
+% Load custom macros
+\input{../macros/math-macros}
+\input{../macros/formatting-macros}
+
+% Define custom environments
+\newenvironment{summary}{
+\begin{quotation}\itshape}{
+\end{quotation}}
+
+% Define custom commands
+\newcommand{\keyword}[1]{\textbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
