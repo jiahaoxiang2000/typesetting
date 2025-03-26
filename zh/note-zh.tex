@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage{../styles/note-zh}
+\usepackage{bookmark}
+
+\title{中文笔记示例}
+\author{张三}
+
+\begin{document}
+
+\maketitle
+
+\section{引言}
+本文档展示了如何使用 \texttt{note-zh.sty} 样式来创建中文笔记。这个样式文件提供了许多有用的功能，包括数学公式排版、参考文献引用和图表处理。
+
+\section{数学公式示例}
+使用预定义的数学宏可以简化公式的输入。例如，实数集可以用 $\R$ 表示，复数集可以用 $\C$ 表示。以下是一个方程示例：
+
+\begin{equation}
+  \int_{a}^{b} f(x) \, dx = F(b) - F(a)
+\end{equation}
+
+向量可以使用 $\vecr{v}$ 来表示，矩阵可以使用 $\mtrx{M}$ 来表示。统计中，期望值表示为 $\E[X]$。
+
+\section{格式化功能}
+本样式提供了多种格式化功能：
+
+\begin{itemize}
+  \item \todo{这是一个待办事项} 显示为红色
+  \item \highlight{重要信息} 使用黄色背景高亮显示
+\end{itemize}
+
+技术名词可以使用 \term{术语} 命令来强调。
+
+\section{引用功能演示}
+引用文献是学术写作的重要部分。例如，我们可以引用高德纳的经典著作\cite{knuth1984texbook}或LaTeX指南\cite{lamport1994latex}。
+
+\section{表格示例}
+下面是一个使用 \texttt{booktabs} 包创建的表格示例：
+
+\begin{table}[htbp]
+  \centering
+  \caption{数据示例表}
+  \begin{tabular}{lcc}
+    \toprule
+    项目 & 数量 & 单价 \\
+    \midrule
+    苹果 & 5 & ¥2.5 \\
+    香蕉 & 3 & ¥1.5 \\
+    橙子 & 2 & ¥3.0 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{分栏示例}
+\begin{multicols}{2}
+  这是分栏文本的示例。在学术论文和技术文档中，有时需要使用多栏布局来提高空间利用率。通过使用 \texttt{multicol} 包，可以轻松创建多栏布局。
+
+  这种布局特别适合词汇表、索引或包含多个短段落的内容。注意分栏文本如何在列之间自动平衡。
+\end{multicols}
+
+\section{结论}
+本文档展示了 \texttt{note-zh.sty} 样式文件的主要功能。通过使用这个样式文件，可以轻松创建具有专业排版质量的中文文档。
+
+% 添加参考文献
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
