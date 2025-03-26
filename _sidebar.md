@@ -2,5 +2,4 @@
 - [Getting Started](getting-started.md)
 - [Usage Guide](usage.md)
 - [Templates](templates.md)
-- [Custom Macros](macros.md)
 - [Contributing](../CONTRIBUTING.md)

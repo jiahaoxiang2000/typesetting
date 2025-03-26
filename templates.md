@@ -4,21 +4,27 @@ This page provides information about the available document templates.
 
 ## Available Templates
 
-The typesetting system includes the following templates:
+The typesetting system includes templates organized by language:
 
-- **Report Template (English)** - For academic and technical reports
+### English Templates (en/)
+
+- **Report Template** - For academic and technical reports
 - **Article Template** - For scientific articles and papers
-- **Book Template** - For book-length documents
+
+### Chinese Templates (zh/)
+
+- **Note Template** - For Chinese notes and documentation
+- **Slide Template** - For Chinese presentations
 
 ## Using Templates
 
 To use a template:
 
-1. Navigate to the templates directory
+1. Navigate to the appropriate language directory (`en/` or `zh/`)
 2. Copy the template files to your working directory
 3. Modify the template according to your needs
 
-## Report Template (English)
+## English Report Template
 
 The English report template uses the `report-en.sty` style file and is suitable for technical reports, theses, and dissertations.
 
@@ -42,6 +48,59 @@ Example usage:
 
 \section{Introduction}
 Introduction text...
+
+\end{document}
+```
+
+## Chinese Note Template
+
+The Chinese note template uses the `note-zh.sty` style file and is suitable for Chinese documentation.
+
+Example usage:
+
+```tex
+\documentclass{article}
+\usepackage{../styles/note-zh}
+
+\title{标题}
+\author{作者}
+
+\begin{document}
+
+\maketitle
+
+\section{引言}
+引言文本...
+
+\end{document}
+```
+
+## Chinese Slide Template
+
+The Chinese slide template uses the `slide-zh.sty` style file with beamer for presentations.
+
+Example usage:
+
+```tex
+\documentclass{beamer}
+\usepackage{../styles/slide-zh}
+
+\title{演示文稿标题}
+\author{作者}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{内容}
+  \begin{itemize}
+    \item 第一点
+    \item 第二点
+  \end{itemize}
+\end{frame}
 
 \end{document}
 ```

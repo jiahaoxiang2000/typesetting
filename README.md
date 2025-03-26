@@ -9,6 +9,7 @@ This project provides tools and templates for high-quality document typesetting 
 ## Features
 
 - Pre-configured document classes for various publication types
+- Templates in multiple languages (English and Chinese)
 - Custom macros for streamlined document creation
 - Bibliography management tools
 - Mathematical equation support
@@ -23,5 +24,14 @@ See the [Getting Started](getting-started.md) guide to begin using the typesetti
 
 - [Usage Guide](usage.md) - Detailed usage instructions
 - [Templates](templates.md) - Available document templates
-- [Custom Macros](macros.md) - Reference for all available custom macros
+- [Macros](macros.md) - Reference for custom macros
 - [Contributing](../CONTRIBUTING.md) - How to contribute to the project
+
+## Language Support
+
+This project includes support for:
+
+- **English documents** - See the `en/` directory for templates
+- **Chinese documents** - See the `zh/` directory for templates
+
+Each language has its own style files and examples to help you get started.

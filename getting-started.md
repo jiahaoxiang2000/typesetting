@@ -23,15 +23,17 @@ Before you begin, make sure you have:
 
    ```bash
    # For TeXLive
-   tlmgr install amsmath amsfonts amssymb graphicx hyperref booktabs microtype geometry setspace inputenc fontenc xcolor marginnote
+   tlmgr install amsmath amsfonts amssymb graphicx hyperref booktabs microtype geometry setspace inputenc fontenc xcolor marginnote ctex
    ```
 
 ## Quick Start
 
-1. Choose a template from the `templates/` directory as your starting point
+1. Choose a template from either the `en/` (English) or `zh/` (Chinese) directory as your starting point
 2. Copy the template to your working directory
 3. Modify the template according to your needs
-4. Compile using LaTeX commands:
+4. Compile using appropriate LaTeX commands:
+
+   For English documents (using pdfLaTeX):
 
    ```bash
    pdflatex document.tex
@@ -40,12 +42,27 @@ Before you begin, make sure you have:
    pdflatex document.tex  # run twice for references
    ```
 
+   For Chinese documents (using XeLaTeX):
+
+   ```bash
+   xelatex document.tex
+   bibtex document  # if bibliography is used
+   xelatex document.tex
+   xelatex document.tex  # run twice for references
+   ```
+
 5. Alternatively, use the provided `.latexmkrc` file with:
 
    ```bash
+   # For English documents
+   cd en/
    latexmk -pdf document.tex
+
+   # For Chinese documents
+   cd zh/
+   latexmk document.tex  # Uses XeLaTeX as configured in zh/.latexmkrc
    ```
 
 ## Next Steps
 
-Once you've successfully compiled your first document, see the [Usage Guide](usage.md) for more detailed information.
+Once you've successfully compiled your first document, see the [Usage Guide](usage.md) for more detailed information and the [Templates](templates.md) page for specific template information.

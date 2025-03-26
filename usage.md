@@ -4,19 +4,46 @@ This document provides instructions on how to use the typesetting system effecti
 
 ## Getting Started
 
-1. Choose a template from the `templates/` directory as your starting point
+1. Choose a template from the appropriate language directory (`en/` for English or `zh/` for Chinese)
 2. Customize the template according to your needs
-3. Compile using the LaTeX commands
+3. Compile using the appropriate LaTeX commands
 
 ## Compilation Process
 
-To compile a LaTeX document:
+### For English Documents
+
+To compile an English LaTeX document:
 
 ```bash
 pdflatex document.tex
 bibtex document  # if bibliography is used
 pdflatex document.tex
 pdflatex document.tex  # run twice for references
+```
+
+Or use the provided `.latexmkrc` in the `en/` directory:
+
+```bash
+cd en/
+latexmk -pdf document.tex
+```
+
+### For Chinese Documents
+
+To compile a Chinese LaTeX document (using XeLaTeX):
+
+```bash
+xelatex document.tex
+bibtex document  # if bibliography is used
+xelatex document.tex
+xelatex document.tex  # run twice for references
+```
+
+Or use the provided `.latexmkrc` in the `zh/` directory:
+
+```bash
+cd zh/
+latexmk document.tex
 ```
 
 ## Using Custom Macros
@@ -38,6 +65,17 @@ Our system provides various custom macros for convenience:
 - `\term{text}` - Format a technical term
 - `\blockquoter{quote}{source}` - Format a block quote with source
 
+### Chinese-Specific Macros
+
+- `\mynote{text}` - Add a note with "注：" prefix
+
+For a complete reference of available macros, see the [Macros](macros.md) page.
+
 ## Style Customization
 
-The `our-typesetting.sty` file contains the main style definitions. Edit this file to change global formatting options.
+Each language has specific style files:
+
+- English: `report-en.sty` for reports and articles
+- Chinese: `note-zh.sty` for documents and `slide-zh.sty` for presentations
+
+Edit these files to change global formatting options for your documents.
