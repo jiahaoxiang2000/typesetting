@@ -123,13 +123,7 @@
 \usepackage{soul} % For highlighting text
 \usepackage{fontawesome5} % For icons in presentations
 
-% Define book paper color
-\definecolor{bookpaper}{RGB}{253,245,230} % Light cream/off-white color for book paper
-\definecolor{tocheading}{RGB}{70,30,0} % Dark brown for TOC headings
-\definecolor{tocsection}{RGB}{120,60,10} % Medium brown for section entries
-\definecolor{tocsubsection}{RGB}{140,80,20} % Lighter brown for subsection entries
-
-% Table of contents formatting
+% For standalone slide compilations (without beamer)
 \AtBeginDocument{%
   \@ifclassloaded{beamer}{%
     % Beamer TOC formatting
