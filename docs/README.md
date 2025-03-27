@@ -4,7 +4,7 @@ Welcome to the documentation for the LaTeX Typesetting Project.
 
 ## Overview
 
-This project provides tools and templates for high-quality document typesetting using LaTeX. It's designed for academic papers, technical documentation, books, and other professional documents requiring precise formatting and layout.
+This project provides tools and templates for high-quality document typesetting using _LaTeX_. It's designed for **academic papers**, **technical documentation**, **books**, and other professional documents requiring precise formatting and layout.
 
 ## Features
 
@@ -12,9 +12,6 @@ This project provides tools and templates for high-quality document typesetting 
 - Templates in multiple languages (English and Chinese)
 - Custom macros for streamlined document creation
 - Bibliography management tools
-- Mathematical equation support
-- Figure and table management
-- Cross-referencing system
 
 ## Getting Started
 
