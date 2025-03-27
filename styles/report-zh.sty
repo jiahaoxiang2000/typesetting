@@ -87,9 +87,7 @@
 %% ============================================
 \pagestyle{fancy}
 \fancyhf{} % Clear all header and footer fields
-\renewcommand{\headrulewidth}{0.4pt} % Add header rule
-\fancyhead[L]{\small\thetitle}
-\fancyhead[R]{\small\theauthor}
+\renewcommand{\headrulewidth}{0pt} % not show header line
 \fancyfoot[C]{\thepage} % Page number in center of footer
 
 \fancypagestyle{plain}{% Also apply to the first page
@@ -123,10 +121,7 @@
 %% Custom environments
 %% ============================================
 \newenvironment{weekplan}{%
-  \noindent\textbf{下周计划：}
-  \begin{enumerate}[leftmargin=2em]
-    }{%
-  \end{enumerate}
+\noindent\textbf{下周计划：}}{%
 }
 
 %% ============================================
