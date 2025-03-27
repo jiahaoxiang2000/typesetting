@@ -80,23 +80,15 @@
 
     % Customize beamer colors for Chinese presentations
     \setbeamercolor{title}{fg=black}
-    \setbeamercolor{frametitle}{fg=black, bg=lightgray!20}
+    \setbeamercolor{frametitle}{fg=black} % Removed bg=lightgray!20 to eliminate background color
     \setbeamercolor{section in toc}{fg=black}
 
     % Footer configuration for beamer
     \setbeamertemplate{footline}{%
       \leavevmode%
-      \hbox{%
-        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
-          \usebeamerfont{author in head/foot}\insertshortauthor
-        \end{beamercolorbox}%
-        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
-          \usebeamerfont{title in head/foot}\insertshorttitle
-        \end{beamercolorbox}%
-        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
-          \usebeamerfont{date in head/foot}\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
-      \end{beamercolorbox}}%
-      \vskip0pt%
+      \hfill\usebeamerfont{page number in head/foot}%
+      \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}%
+      \vskip0.5ex%
     }
   }{}%
 }
@@ -108,21 +100,18 @@
   colback=blue!5!white,
   colframe=blue!75!black,
   title=Information,
-  boxrule=0.5pt
 }
 
 \newtcolorbox{warningbox}{
   colback=orange!5!white,
   colframe=orange!75!black,
   title=Warning,
-  boxrule=0.5pt
 }
 
 \newtcolorbox{notebox}{
   colback=green!5!white,
   colframe=green!75!black,
   title=Note,
-  boxrule=0.5pt
 }
 
 %% ============================================
@@ -130,65 +119,6 @@
 %% ============================================
 \usepackage{soul} % For highlighting text
 \usepackage{fontawesome5} % For icons in presentations
-
-%% ============================================
-%% Integrated Math Macros (from math-macros.tex)
-%% ============================================
-% Common math operators
-\DeclareMathOperator{\arctg}{arctg}
-\DeclareMathOperator{\arcctg}{arcctg}
-\DeclareMathOperator{\dif}{d} % Differential operator
-\DeclareMathOperator{\Tr}{Tr} % Trace operator
-\DeclareMathOperator{\diag}{diag} % Diagonal operator
-\DeclareMathOperator{\rank}{rank} % Rank operator
-
-% Shorthand commands
-\newcommand{\R}{\mathbb{R}}         % Real numbers
-\newcommand{\Z}{\mathbb{Z}}         % Integers
-\newcommand{\N}{\mathbb{N}}         % Natural numbers
-\newcommand{\C}{\mathbb{C}}         % Complex numbers
-\newcommand{\Q}{\mathbb{Q}}         % Rational numbers
-
-% Vector notation
-\newcommand{\vecr}[1]{\vec{#1}}    % Vector
-\newcommand{\mtrx}[1]{\mathbf{#1}} % Matrix
-\newcommand{\vect}[1]{\boldsymbol{#1}} % Vector notation
-\newcommand{\mat}[1]{\mathbf{#1}} % Matrix notation
-\newcommand{\transp}[1]{{#1}^{\top}} % Transpose notation
-
-% Probability and statistics
-\newcommand{\E}{\mathbb{E}}         % Expected value
-\newcommand{\Var}{\mathrm{Var}}     % Variance
-\newcommand{\Cov}{\mathrm{Cov}}     % Covariance
-
-% Calculus shortcuts
-\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}} % Partial derivative
-\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}} % Second partial derivative
-\newcommand{\dd}[2]{\frac{d #1}{d #2}} % Total derivative
-
-%% ============================================
-%% Integrated Formatting Macros (from formatting-macros.tex)
-%% ============================================
-% Text highlighting and emphasis
-\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
-\newcommand{\highlight}[1]{\colorbox{yellow}{#1}}
-
-% Specialized text formatting
-\newcommand{\term}[1]{\textit{#1}}
-\newcommand{\foreign}[1]{\textit{#1}}
-\newcommand{\acronym}[1]{\textsc{#1}}
-
-% Quotation helpers
-\newcommand{\enquote}[1]{``#1''}
-\newcommand{\blockquoter}[2]{%
-  \begin{quote}
-    #1
-    \par\raggedleft--- #2
-  \end{quote}
-}
-
-% Chinese-specific formatting
-\providecommand{\mynote}[1]{\textbf{注：}#1} % Use \mynote instead of \note to avoid conflicts
 
 % For standalone slide compilations (without beamer)
 \AtBeginDocument{%
