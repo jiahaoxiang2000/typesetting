@@ -10,7 +10,7 @@ Before you begin, make sure you have:
 - A text editor or LaTeX IDE
 - Git (optional, for cloning the repository)
 
-## Installation
+## Installation typesetting
 
 1. Clone this repository:
 
@@ -25,6 +25,10 @@ Before you begin, make sure you have:
    # For TeXLive
    tlmgr install amsmath amsfonts amssymb graphicx hyperref booktabs microtype geometry setspace inputenc fontenc xcolor marginnote ctex
    ```
+
+:::tip
+If you've installed the complete LaTeX distribution, you can update all packages at once using the command `tlmgr update --self --all`. This eliminates the need to install packages manually.
+:::
 
 ## Quick Start
 
@@ -50,6 +54,10 @@ Before you begin, make sure you have:
    xelatex document.tex
    xelatex document.tex  # run twice for references
    ```
+
+:::warning
+All templates need to link to the `styles/**.sty` files, so be sure to check that the `\usepackage{../styles/***}` paths are correct relative to your project directory. To reduce dependencies, each style file contains all the necessary packages you'll need.
+:::
 
 5. Alternatively, use the provided `.latexmkrc` file with:
 
