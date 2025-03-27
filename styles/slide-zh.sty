@@ -125,10 +125,24 @@
 
 % Define book paper color
 \definecolor{bookpaper}{RGB}{253,245,230} % Light cream/off-white color for book paper
+\definecolor{tocheading}{RGB}{70,30,0} % Dark brown for TOC headings
+\definecolor{tocsection}{RGB}{120,60,10} % Medium brown for section entries
+\definecolor{tocsubsection}{RGB}{140,80,20} % Lighter brown for subsection entries
 
-% For standalone slide compilations (without beamer)
+% Table of contents formatting
 \AtBeginDocument{%
-  \@ifclassloaded{beamer}{}{%
+  \@ifclassloaded{beamer}{%
+    % Beamer TOC formatting
+    \setbeamercolor{section in toc}{fg=tocsection}
+    \setbeamercolor{subsection in toc}{fg=tocsubsection}
+    \setbeamertemplate{section in toc}{\inserttocsectionnumber.~\inserttocsection\par}
+    \setbeamertemplate{subsection in toc}{\leavevmode\leftskip=2em\inserttocsubsection\par}
+
+    % Beamer-specific background setting
+    \setbeamercolor{background canvas}{bg=bookpaper}
+  }
+  {%
+
     % Non-beamer document settings
     \geometry{margin=0.5in, paperheight=7.5in, paperwidth=10in} % Good aspect ratio for slides
     \pagecolor{bookpaper} % Set page background color for non-beamer documents
@@ -144,3 +158,7 @@
     }
   }%
 }
+
+% Add vertical space between TOC entries for better readability
+\usepackage{etoolbox}
+\pretocmd{\tableofcontents}{\setlength{\parskip}{0.5em}}{}{}
