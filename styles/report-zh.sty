@@ -36,6 +36,27 @@
 %% ============================================
 \RequirePackage[numbers]{natbib}
 \RequirePackage{bibentry}
+\RequirePackage{etoolbox} % for conditional checking
+
+% Create a more reliable citation tracking system
+\newcounter{citationcount}
+\setcounter{citationcount}{0}
+\let\oldcite\cite
+\let\oldcitep\citep
+\let\oldcitet\citet
+
+% Redefine citation commands to increment our counter
+\renewcommand{\cite}[2][]{\stepcounter{citationcount}\oldcite[#1]{#2}}
+\renewcommand{\citep}[2][]{\stepcounter{citationcount}\oldcitep[#1]{#2}}
+\renewcommand{\citet}[2][]{\stepcounter{citationcount}\oldcitet[#1]{#2}}
+
+% Conditional bibliography command
+\newcommand{\printbibliographyifcited}[2][]{%
+  \ifnum\value{citationcount}>0
+  \bibliographystyle{#1}
+  \bibliography{#2}
+  \fi
+}
 
 %% ============================================
 %% Hyperlink and PDF properties
