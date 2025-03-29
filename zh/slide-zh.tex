@@ -65,6 +65,7 @@
 \section{表格}
 \begin{frame}{表格示例}
   \begin{table}
+    \caption{简单表格示例}
     \centering
     \begin{tabular}{l|c|r}
       \toprule
@@ -74,12 +75,23 @@
       长文本 & 短文本 & 100 \cite{ctex2020manual}\\
       \bottomrule
     \end{tabular}
-    \caption{简单表格示例}
+
   \end{table}
 \end{frame}
 
-\section{参考文献}
+\section{动画效果}
+% Example of sequential text animation
+\begin{frame}{文本动画示例}
+  \begin{seqpara}
+    \seqsent{这是第一句话，会先显示并保持高亮。}
+    \seqsent{当第二句话出现时，第一句话会变暗。}
+    \seqsent{第三句话出现后，前两句都会变暗。}
+    \seqsent{这样可以引导观众注意力集中在当前正在讲解的内容上。}
+    \seqsent{这种呈现方式特别适合需要逐步展示论点的场景。}
+  \end{seqpara}
+\end{frame}
 
+\section{参考文献}
 \begin{frame}
   \frametitle{参考文献}
   \bibliographystyle{alpha}
