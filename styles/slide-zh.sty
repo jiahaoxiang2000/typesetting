@@ -70,6 +70,13 @@
 %% Beamer theme and appearance
 %% ============================================
 % If used with beamer class, these settings will help customize it
+% Define book paper color
+% bookpaper theme
+\definecolor{bookpaper}{RGB}{253,245,230} % Light cream/off-white color for book paper
+\definecolor{tocheading}{RGB}{70,30,0} % Dark brown for TOC headings
+\definecolor{tocsection}{RGB}{120,60,10} % Medium brown for section entries
+\definecolor{tocsubsection}{RGB}{140,80,20} % Lighter brown for subsection entries
+
 \AtBeginDocument{%
   \@ifclassloaded{beamer}{%
     % Beamer-specific settings
@@ -81,57 +88,7 @@
     % Customize beamer colors for Chinese presentations
     \setbeamercolor{title}{fg=black}
     \setbeamercolor{frametitle}{fg=black} % Removed bg=lightgray!20 to eliminate background color
-    \setbeamercolor{section in toc}{fg=black}
 
-    % Footer configuration for beamer
-    \setbeamertemplate{footline}{%
-      \leavevmode%
-      \hfill\usebeamerfont{page number in head/foot}%
-      \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}%
-      \vskip0.5ex%
-    }
-
-    % Beamer-specific background setting
-    \setbeamercolor{background canvas}{bg=bookpaper}
-  }{}%
-}
-
-%% ============================================
-%% Optimized block environments for faster compilation
-%% ============================================
-\newtcolorbox{infobox}{
-  colback=blue!5!white,
-  colframe=blue!75!black,
-  title=Information,
-}
-
-\newtcolorbox{warningbox}{
-  colback=orange!5!white,
-  colframe=orange!75!black,
-  title=Warning,
-}
-
-\newtcolorbox{notebox}{
-  colback=green!5!white,
-  colframe=green!75!black,
-  title=Note,
-}
-
-%% ============================================
-%% Misc utilities
-%% ============================================
-\usepackage{soul} % For highlighting text
-\usepackage{fontawesome5} % For icons in presentations
-
-% Define book paper color
-\definecolor{bookpaper}{RGB}{253,245,230} % Light cream/off-white color for book paper
-\definecolor{tocheading}{RGB}{70,30,0} % Dark brown for TOC headings
-\definecolor{tocsection}{RGB}{120,60,10} % Medium brown for section entries
-\definecolor{tocsubsection}{RGB}{140,80,20} % Lighter brown for subsection entries
-
-% Table of contents formatting
-\AtBeginDocument{%
-  \@ifclassloaded{beamer}{%
     % Beamer TOC formatting
     \setbeamercolor{section in toc}{fg=tocsection}
     \setbeamercolor{subsection in toc}{fg=tocsubsection}
@@ -140,25 +97,31 @@
 
     % Beamer-specific background setting
     \setbeamercolor{background canvas}{bg=bookpaper}
-  }
-  {%
 
-    % Non-beamer document settings
-    \geometry{margin=0.5in, paperheight=7.5in, paperwidth=10in} % Good aspect ratio for slides
-    \pagecolor{bookpaper} % Set page background color for non-beamer documents
+    % Set block colors
+    \setbeamercolor{block title}{bg=tocheading!20!bookpaper, fg=tocheading}
+    \setbeamercolor{block body}{bg=bookpaper!80!white, fg=black}
 
-    % Title formatting for non-beamer slides
-    \renewcommand{\maketitle}{%
-      \begin{center}
-        \LARGE\bfseries\thetitle\\[0.5em]
-        \large\theauthor\\[0.3em]
-        \normalsize\today
-      \end{center}
-      \vspace{1em}
+    \setbeamercolor{block title alerted}{bg=red!60!bookpaper, fg=black}
+    \setbeamercolor{block body alerted}{bg=red!5!bookpaper, fg=black}
+
+    % Fix example blocks
+    \setbeamercolor{block title example}{bg=tocsection!60!bookpaper, fg=black}
+    \setbeamercolor{block body example}{bg=tocsection!10!bookpaper, fg=black}
+
+    % Footer configuration for beamer
+    \setbeamertemplate{footline}{%
+      \leavevmode%
+      \hfill\usebeamerfont{page number in head/foot}%
+      \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}%
+      \vskip1ex%
     }
-  }%
+  }{}%
 }
 
-% Add vertical space between TOC entries for better readability
+%% ============================================
+%% Misc utilities
+%% ============================================
+\usepackage{soul} % For highlighting text
+\usepackage{fontawesome5} % For icons in presentations
 \usepackage{etoolbox}
-\pretocmd{\tableofcontents}{\setlength{\parskip}{0.5em}}{}{}
