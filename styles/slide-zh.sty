@@ -120,6 +120,28 @@
 }
 
 %% ============================================
+%% Sequential text reveal animation
+%% ============================================
+% Define colors for active and dimmed text
+\definecolor{activetextcolor}{RGB}{0,0,0}      % Black for active text
+\definecolor{dimmedtextcolor}{RGB}{150,150,150} % Gray for dimmed text
+
+% Command for a single sentence in sequential reveal
+% Usage: \seqsent{<sentence text>}
+\newcommand{\seqsent}[1]{%
+  \only<+->{\alt<.>{\color{activetextcolor}}{\color{dimmedtextcolor}}#1\\[0.5em]}%
+}
+
+% Environment for paragraph-style sequential reveal
+% Reveals each sentence in a paragraph one by one
+% Usage: \begin{seqpara} \seqsent{First sentence.} \seqsent{Second sentence.} \end{seqpara}
+\newenvironment{seqpara}{%
+  \begin{overlayarea}{\textwidth}{0.8\textheight}%
+  }{%
+  \end{overlayarea}%
+}
+
+%% ============================================
 %% Misc utilities
 %% ============================================
 \usepackage{soul} % For highlighting text
