@@ -32,3 +32,7 @@ This project includes support for:
 - **Chinese documents** - See the `zh/` directory for templates
 
 Each language has its own style files and examples to help you get started.
+
+## Preview PDF Examples
+
+You can preview example PDF output files without having to compile them yourself by visiting the [GitHub Releases page](https://github.com/jiahaoxiang2000/typesetting/releases). There you'll find pre-compiled PDF examples of reports, notes, slides and other document types in both supported languages.

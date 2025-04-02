@@ -2,4 +2,5 @@
 - [Getting Started](getting-started.md)
 - [Usage Guide](usage.md)
 - [Templates](templates.md)
+- [Examples](examples.md)
 - [Contributing](contributing.md)

@@ -43,6 +43,10 @@ This project provides tools and templates for high-quality document typesetting 
 
 Check out our [online documentation](https://jiahaoxiang2000.github.io/typesetting/) for detailed usage instructions.
 
+## Preview Examples
+
+You can view example PDF files without having to compile them yourself by visiting our [GitHub Releases page](https://github.com/jiahaoxiang2000/typesetting/releases), where you'll find pre-compiled PDF examples of various document types.
+
 ## Directory Structure
 
 ```

@@ -7,6 +7,8 @@
   <meta name="description" content="Documentation for the LaTeX Typesetting Project">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <!-- PDF.js stylesheet -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pdfjs-dist@2.9.359/web/pdf_viewer.min.css">
 </head>
 <body>
   <div id="app"></div>
@@ -34,6 +36,14 @@
         buttonText: 'Copy to clipboard',
         errorText: 'Error',
         successText: 'Copied'
+      },
+      // PDF embed configuration
+      pdf: {
+        // PDF.js options
+        pdfOptions: {
+          height: "800px",
+          width: "100%"
+        }
       }
     }
   </script>
@@ -46,5 +56,10 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-latex.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-tex.min.js"></script>
+  
+  <!-- PDF.js requirements -->
+  <script src="//cdn.jsdelivr.net/npm/pdfjs-dist@2.9.359/build/pdf.min.js"></script>
+  <!-- PDF.js for Docsify plugin -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-pdf-embed-plugin/dist/docsify-pdf-embed.js"></script>
 </body>
 </html>
