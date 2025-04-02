@@ -13,6 +13,8 @@ jobs:
   build:
     name: Create Release
     runs-on: ubuntu-latest
+    container:
+      image: registry.gitlab.com/islandoftex/images/texlive:latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -32,17 +34,52 @@ jobs:
             echo "RELEASE_NOTES<<EOF" >> $GITHUB_ENV
             echo "## Changes since $PREVIOUS_TAG" >> $GITHUB_ENV
             echo "" >> $GITHUB_ENV
-            git log --pretty=format:"* %s (%an)" $PREVIOUS_TAG..$CURRENT_TAG >> $GITHUB_ENV
+            git log --pretty=format:"* %s (%an) [%h](https://github.com/${{ github.repository }}/commit/%H)" $PREVIOUS_TAG..$CURRENT_TAG >> $GITHUB_ENV
             echo "" >> $GITHUB_ENV
             echo "EOF" >> $GITHUB_ENV
           else
             echo "RELEASE_NOTES<<EOF" >> $GITHUB_ENV
             echo "## Initial Release" >> $GITHUB_ENV
             echo "" >> $GITHUB_ENV
-            git log --pretty=format:"* %s (%an)" >> $GITHUB_ENV
+            git log --pretty=format:"* %s (%an) [%h](https://github.com/${{ github.repository }}/commit/%H)" >> $GITHUB_ENV
             echo "" >> $GITHUB_ENV
             echo "EOF" >> $GITHUB_ENV
           fi
+
+      - name: Compile Chinese documents
+        run: |
+          cd zh
+          mkdir -p build
+          find . -name "*.tex" -type f -not -path "./build/*" | while read file; do
+            filename=$(basename "$file" .tex)
+            echo "Compiling $filename.tex"
+            latexmk -xelatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape "$file"
+            if [ -f "$filename.pdf" ]; then
+              mv "$filename.pdf" "build/${filename}.pdf"
+            fi
+          done
+          cd ..
+
+      - name: Compile English documents
+        run: |
+          cd en
+          mkdir -p build
+          find . -name "*.tex" -type f -not -path "./build/*" | while read file; do
+            filename=$(basename "$file" .tex)
+            echo "Compiling $filename.tex"
+            latexmk -pdf -synctex=1 -interaction=nonstopmode -file-line-error "$file"
+            if [ -f "$filename.pdf" ]; then
+              mv "$filename.pdf" "build/${filename}.pdf"
+            fi
+          done
+          cd ..
+
+      - name: List generated PDFs
+        run: |
+          echo "Generated PDFs in zh/build:"
+          ls -la zh/build || echo "No PDFs found in zh/build"
+          echo "Generated PDFs in en/build:"
+          ls -la en/build || echo "No PDFs found in en/build"
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
@@ -51,5 +88,8 @@ jobs:
           body: ${{ env.RELEASE_NOTES }}
           draft: false
           prerelease: false
+          files: |
+            zh/build/*.pdf
+            en/build/*.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
