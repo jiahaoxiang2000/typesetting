@@ -69,7 +69,7 @@ Our system provides various custom macros for convenience:
 
 - `\mynote{text}` - Add a note with "注：" prefix
 
-For a complete reference of available macros, see the [Macros](macros.md) page.
+For examples of these macros in use, see the [GitHub Releases page](https://github.com/jiahaoxiang2000/typesetting/releases) where you can download example PDFs.
 
 ## Style Customization
 

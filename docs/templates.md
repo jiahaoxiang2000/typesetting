@@ -112,3 +112,7 @@ Each template can be customized by:
 1. Modifying the corresponding `.sty` file in the `styles/` directory
 2. Creating a new style file based on an existing one
 3. Modifying the template directly for one-time use
+
+## Example PDFs
+
+You can view pre-compiled examples of each template by visiting the [GitHub Releases page](https://github.com/jiahaoxiang2000/typesetting/releases), where you'll find PDF examples of all templates.

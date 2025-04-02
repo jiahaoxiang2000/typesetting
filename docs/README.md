@@ -21,7 +21,7 @@ See the [Getting Started](getting-started.md) guide to begin using the typesetti
 
 - [Usage Guide](usage.md) - Detailed usage instructions
 - [Templates](templates.md) - Available document templates
-- [Macros](macros.md) - Reference for custom macros
+- [GitHub Releases](https://github.com/jiahaoxiang2000/typesetting/releases) - Download example PDFs
 - [Contributing](../CONTRIBUTING.md) - How to contribute to the project
 
 ## Language Support
