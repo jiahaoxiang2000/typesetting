@@ -52,8 +52,8 @@ You can view example PDF files without having to compile them yourself by visiti
 ```
 typesetting/
 ├── styles/          # Custom style files
-├── macros/          # LaTeX macros
-├── examples/        # Example documents
+├── zh/              # Chinese templates
+├── en/              # English templates
 ├── docs/            # Documentation (Docsify)
 └── .github/         # GitHub Actions workflows
 ```
