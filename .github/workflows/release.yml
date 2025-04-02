@@ -16,6 +16,11 @@ jobs:
     container:
       image: registry.gitlab.com/islandoftex/images/texlive:latest
     steps:
+      # Configure Git to trust the workspace directory
+      - name: Configure Git
+        run: |
+          git config --global --add safe.directory "/__w/typesetting/typesetting"
+          
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -29,19 +34,20 @@ jobs:
 
       - name: Generate release notes
         id: generate_notes
+        shell: sh -e {0}
         run: |
           if [ -n "$PREVIOUS_TAG" ]; then
             echo "RELEASE_NOTES<<EOF" >> $GITHUB_ENV
             echo "## Changes since $PREVIOUS_TAG" >> $GITHUB_ENV
             echo "" >> $GITHUB_ENV
-            git log --pretty=format:"* %s (%an) [%h](https://github.com/${{ github.repository }}/commit/%H)" $PREVIOUS_TAG..$CURRENT_TAG >> $GITHUB_ENV
+            git log --pretty=format:"* %s (%an) [%h](https://github.com/jiahaoxiang2000/typesetting/commit/%H)" $PREVIOUS_TAG..$CURRENT_TAG >> $GITHUB_ENV
             echo "" >> $GITHUB_ENV
             echo "EOF" >> $GITHUB_ENV
           else
             echo "RELEASE_NOTES<<EOF" >> $GITHUB_ENV
             echo "## Initial Release" >> $GITHUB_ENV
             echo "" >> $GITHUB_ENV
-            git log --pretty=format:"* %s (%an) [%h](https://github.com/${{ github.repository }}/commit/%H)" >> $GITHUB_ENV
+            git log --pretty=format:"* %s (%an) [%h](https://github.com/jiahaoxiang2000/typesetting/commit/%H)" >> $GITHUB_ENV
             echo "" >> $GITHUB_ENV
             echo "EOF" >> $GITHUB_ENV
           fi
