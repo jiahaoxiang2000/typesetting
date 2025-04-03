@@ -1,4 +1,12 @@
 \ProvidesPackage{note-zh}[2024/02/17 Custom style for Chinese documents]
+%% ============================================
+%% Package options
+%% ============================================
+\newif\if@showtoc
+\@showtoctrue % Default is to show TOC
+\DeclareOption{notoc}{\@showtocfalse}
+\DeclareOption{showtoc}{\@showtoctrue}
+\ProcessOptions\relax
 
 %% ============================================
 %% Document structure and layout packages
@@ -73,8 +81,10 @@
     \large\today
   \end{center}
   \vspace{1em}
-  \tableofcontents
-  \newpage
+  \if@showtoc
+    \tableofcontents
+    \newpage
+  \fi
   \pagenumbering{arabic} % Switch to Arabic numerals for main content
   \setcounter{page}{1} % Reset page counter to 1
   \setcounter{section}{-1} % Start section numbering from 0
