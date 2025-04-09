@@ -26,6 +26,20 @@
 \RequirePackage{tikz}
 
 %% ============================================
+%% Color support and shortcuts
+%% ============================================
+\RequirePackage{xcolor}
+% Define convenient color shorthand commands
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\yellow}[1]{\textcolor{yellow}{#1}}
+\newcommand{\orange}[1]{\textcolor{orange}{#1}}
+\newcommand{\purple}[1]{\textcolor{purple}{#1}}
+\newcommand{\grey}[1]{\textcolor{gray}{#1}}
+\newcommand{\gray}[1]{\textcolor{gray}{#1}}
+
+%% ============================================
 %% Table and figure enhancements
 %% ============================================
 \RequirePackage{booktabs}
@@ -82,8 +96,8 @@
   \end{center}
   \vspace{1em}
   \if@showtoc
-    \tableofcontents
-    \newpage
+  \tableofcontents
+  \newpage
   \fi
   \pagenumbering{arabic} % Switch to Arabic numerals for main content
   \setcounter{page}{1} % Reset page counter to 1
