@@ -3,6 +3,12 @@
 \usepackage[notoc]{../styles/note-zh}
 % Default shows table of contents
 % \usepackage{../styles/note-zh}
+
+% Choose Chinese fonts, if want to change the english font, please use \setmainfont
+% \setCJKmainfont{Noto Serif CJK SC} % Main Chinese font (Songti)
+% \setCJKsansfont{Noto Sans CJK SC} % Sans-serif Chinese font (Heiti)
+% \setCJKmonofont{Noto Sans Mono CJK SC} % Monospaced Chinese font (Fangsong)
+
 \usepackage{bookmark}
 
 \title{中文笔记示例}
@@ -14,6 +20,7 @@
 
 \section{引言}
 本文档展示了如何使用 \texttt{note-zh.sty} 样式来创建中文笔记。这个样式文件提供了许多有用的功能，包括数学公式排版、参考文献引用和图表处理。
+
 
 \section{引用功能演示}
 引用文献是学术写作的重要部分。例如，我们可以引用高德纳的经典著作\cite{knuth1984texbook}或LaTeX指南\cite{lamport1994latex}。
@@ -41,6 +48,32 @@
 
   这种布局特别适合词汇表、索引或包含多个短段落的内容。注意分栏文本如何在列之间自动平衡。
 \end{multicols}
+
+\section{字体示例}
+本节展示了当前设置的不同中文字体样式。
+
+\subsection{字体对比}
+以下是三种字体的对比展示：
+
+\begin{itemize}
+  \item \textrm{宋体 (Serif)：这是正文字体 Noto Serif CJK SC，适合长篇文章阅读。}
+  \item \textsf{黑体 (Sans-serif)：这是无衬线字体 Noto Sans CJK SC，适合标题和强调。}
+  \item \texttt{等宽字体 (Monospace)：这是等宽字体 Noto Sans Mono CJK SC，适合代码和特定格式。}
+\end{itemize}
+
+\begin{table}[htbp]
+  \centering
+  \caption{中文字体对比}
+  \begin{tabular}{ll}
+    \toprule
+    字体类型 & 示例文字 \\
+    \midrule
+    宋体 (Serif) & \textrm{中文排版示例文字 123} \\
+    黑体 (Sans) & \textsf{中文排版示例文字 123} \\
+    等宽字体 (Mono) & \texttt{中文排版示例文字 123} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \section{结论}
 本文档展示了 \texttt{note-zh.sty} 样式文件的主要功能。通过使用这个样式文件，可以轻松创建具有专业排版质量的中文文档。

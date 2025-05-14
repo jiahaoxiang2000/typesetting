@@ -69,16 +69,17 @@
 %% Chinese language support
 %% ============================================
 \RequirePackage{ctex}
-% Choose Chinese fonts, if want to change the english font, please use \setmainfont
-% \setCJKmainfont{Songti SC} % Main Chinese font (Songti)
-% \setCJKsansfont{Lantinghei TC} % Sans-serif Chinese font (Heiti)
-% \setCJKmonofont{Maple Mono NF CN} % Monospaced Chinese font (Fangsong)
+
 
 %% ============================================
 %% Section formatting
 %% ============================================
 \titleformat{\section}
-{\normalfont\Large\bfseries}{\thesection}{1em}{}
+{\normalfont\normalsize\bfseries}{\thesection}{0.5em}{}
+\titleformat{\subsection}
+{\normalfont\normalsize\bfseries}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}
+{\normalfont\small\bfseries}{\thesubsubsection}{0.5em}{}
 
 %% ============================================
 %% Page geometry and layout
