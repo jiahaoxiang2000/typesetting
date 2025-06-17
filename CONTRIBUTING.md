@@ -1,5 +1,8 @@
 # Contributing to LaTeX Typesetting Project
 
+> [!NOTE]
+> Thank you for your interest in contributing to this project! Your contributions help make this typesetting system better for everyone.
+
 Thank you for your interest in contributing to this project! Here's how you can help.
 
 ## Code of Conduct
@@ -9,6 +12,9 @@ By participating in this project, you agree to maintain a respectful and inclusi
 ## How to Contribute
 
 ### Reporting Bugs
+
+> [!TIP]
+> When reporting bugs, always include a minimal working example (MWE) that reproduces the issue. This helps maintainers identify and fix problems quickly.
 
 - Check if the bug has already been reported in the Issues section
 - Include a clear title and description
@@ -52,6 +58,9 @@ By participating in this project, you agree to maintain a respectful and inclusi
 - Don't include unnecessary packages
 
 ## Testing
+
+> [!CAUTION]
+> Always test your changes thoroughly before submitting a pull request. Broken templates or styles can affect many users.
 
 - Provide test documents that demonstrate your changes
 - Ensure your changes compile with pdfLaTeX, XeLaTeX, and LuaLaTeX if possible
