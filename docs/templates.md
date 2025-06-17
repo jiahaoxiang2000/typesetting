@@ -1,6 +1,7 @@
 # Document Templates
 
-This page provides information about the available document templates.
+> [!NOTE]
+> This page provides information about the available document templates. Each template is optimized for specific document types and languages.
 
 ## Available Templates
 
@@ -18,6 +19,9 @@ The typesetting system includes templates organized by language:
 - **Slide Template** (`slide-zh.tex`) - For Chinese presentations with beamer
 
 ## Using Templates
+
+> [!TIP]
+> Always copy templates to your working directory before modifying them. This preserves the original templates for future use.
 
 To use a template:
 
@@ -54,6 +58,9 @@ Introduction text...
 ```
 
 ## Chinese Note Template
+
+> [!WARNING]
+> The Chinese note template uses the `note-zh.sty` style file and **requires XeLaTeX** for compilation. It supports optional table of contents control.
 
 The Chinese note template uses the `note-zh.sty` style file and is suitable for Chinese documentation, notes, and technical writing. It supports optional table of contents control.
 
@@ -116,6 +123,9 @@ Example usage:
 ```
 
 ## Chinese Report Template
+
+> [!NOTE]
+> The Chinese report template is specifically designed for weekly reports, project documentation, and technical reports with built-in planning environments.
 
 The Chinese report template uses the `report-zh.sty` style file and is designed for weekly reports, project documentation, and technical reports. It includes special environments for weekly planning and project tracking.
 
@@ -281,6 +291,9 @@ Example usage:
 
 ### Animation Features
 
+> [!TIP]
+> The sequential animation feature is perfect for step-by-step explanations in presentations. Each sentence will appear one by one, keeping audience attention focused.
+
 The slide template includes a special `seqpara` environment for sequential text animation:
 
 - `\begin{seqpara}...\end{seqpara}` - Creates a sequential paragraph container
@@ -290,6 +303,9 @@ This is particularly useful for presentations where you want to guide audience a
 
 ## Customizing Templates
 
+> [!WARNING]
+> When modifying style files, make backup copies first. Changes to `.sty` files will affect all documents using that style.
+
 Each template can be customized by:
 
 1. Modifying the corresponding `.sty` file in the `styles/` directory
@@ -298,4 +314,5 @@ Each template can be customized by:
 
 ## Example PDFs
 
-You can view pre-compiled examples of each template by visiting the [GitHub Releases page](https://github.com/jiahaoxiang2000/typesetting/releases), where you'll find PDF examples of all templates.
+> [!TIP]
+> You can view pre-compiled examples of each template by visiting the [GitHub Releases page](https://github.com/jiahaoxiang2000/typesetting/releases), where you'll find PDF examples of all templates.

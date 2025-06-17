@@ -1,6 +1,7 @@
 # Bibliography and References
 
-This guide covers the bibliography and reference management features available in the typesetting system.
+> [!NOTE]
+> This guide covers the bibliography and reference management features available in the typesetting system. Proper citation management is essential for academic and professional documents.
 
 ## Bibliography Files
 
@@ -8,10 +9,13 @@ The project includes comprehensive bibliography examples:
 
 ### Chinese References (`zh/references.bib`)
 
+> [!NOTE]
+> The Chinese bibliography file demonstrates proper formatting for mixed Chinese and English references. Use UTF-8 encoding for all `.bib` files containing Chinese characters.
+
 The Chinese directory contains a `references.bib` file with examples of various reference types:
 
 - **Books** - LaTeX guides and technical manuals
-- **Articles** - Academic papers and journal articles  
+- **Articles** - Academic papers and journal articles
 - **Online Resources** - Web-based documentation and manuals
 - **Chinese Publications** - Works in Chinese with proper formatting
 
@@ -67,6 +71,7 @@ The `report-zh.sty` style uses the `natbib` package with numbered citations:
 ```
 
 This provides:
+
 - `\cite{key}` - Basic citation
 - `\citep{key}` - Parenthetical citation
 - `\citet{key}` - Textual citation
@@ -75,19 +80,25 @@ This provides:
 
 ## Compilation with Bibliography
 
+> [!CAUTION]
+> Bibliography compilation requires a specific sequence of commands. Missing any step will result in incomplete or missing references.
+
 To properly compile documents with bibliography:
 
 1. **First compilation**: Generates auxiliary files
+
    ```bash
    xelatex document.tex
    ```
 
 2. **Bibliography processing**: Processes citation database
+
    ```bash
    bibtex document
    ```
 
 3. **Second compilation**: Incorporates bibliography
+
    ```bash
    xelatex document.tex
    ```
@@ -99,6 +110,9 @@ To properly compile documents with bibliography:
 
 ### Using LaTeXMK
 
+> [!TIP]
+> Use LaTeXMK for automatic bibliography processing. It handles the entire compilation sequence automatically, saving time and preventing errors.
+
 The provided `.latexmkrc` in the `zh/` directory automatically handles the bibliography compilation:
 
 ```bash
@@ -107,6 +121,7 @@ latexmk document.tex
 ```
 
 The configuration includes:
+
 ```perl
 # Bibliography settings
 $bibtex = "bibtex %O %B";
@@ -137,6 +152,9 @@ The Chinese templates are configured to handle mixed Chinese and English referen
 
 ## Best Practices
 
+> [!TIP]
+> Following these best practices will ensure consistent and professional bibliography formatting across all your documents.
+
 1. **Consistent naming**: Use descriptive citation keys (e.g., `author2020title`)
 2. **Complete information**: Include all available bibliographic data
 3. **URL dates**: For online sources, include both publication date and access date
@@ -153,6 +171,9 @@ The Chinese templates are configured to handle mixed Chinese and English referen
 4. **Font issues**: Make sure appropriate CJK fonts are installed for Chinese references
 
 ### Example Error Solutions
+
+> [!WARNING]
+> These are the most common bibliography-related errors. Always check your compilation sequence and file encoding when encountering issues.
 
 **Error**: `Citation 'key' on page X undefined`
 **Solution**: Run the complete compilation sequence: `xelatex` → `bibtex` → `xelatex` → `xelatex`

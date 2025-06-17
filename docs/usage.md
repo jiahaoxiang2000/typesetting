@@ -4,6 +4,9 @@ This document provides instructions on how to use the typesetting system effecti
 
 ## Getting Started
 
+> [!NOTE]
+> Before using any template, make sure you have the correct LaTeX distribution installed and the required packages available.
+
 1. Choose a template from the appropriate language directory (`en/` for English or `zh/` for Chinese)
 2. Customize the template according to your needs
 3. Compile using the appropriate LaTeX commands
@@ -11,6 +14,9 @@ This document provides instructions on how to use the typesetting system effecti
 ## Compilation Process
 
 ### For English Documents
+
+> [!TIP]
+> For English documents, use pdfLaTeX for faster compilation. If you need advanced typography features, consider using XeLaTeX or LuaLaTeX.
 
 To compile an English LaTeX document:
 
@@ -30,6 +36,9 @@ latexmk -pdf document.tex
 
 ### For Chinese Documents
 
+> [!WARNING]
+> Chinese documents **must** be compiled with XeLaTeX to properly handle CJK characters and fonts. Do not use pdfLaTeX for Chinese documents.
+
 To compile a Chinese LaTeX document (using XeLaTeX):
 
 ```bash
@@ -47,6 +56,7 @@ latexmk document.tex
 ```
 
 The `.latexmkrc` configuration includes:
+
 - XeLaTeX compilation mode (`$pdf_mode = 5`)
 - SyncTeX support for editor integration
 - Shell escape enabled for advanced packages
@@ -95,6 +105,9 @@ Our system provides various custom macros for convenience:
 
 ### Chinese Font Configuration
 
+> [!WARNING]
+> Font configuration is crucial for Chinese documents. Make sure you have appropriate CJK fonts installed on your system before compiling.
+
 The Chinese templates support flexible font configuration:
 
 ```tex
@@ -122,6 +135,7 @@ The `report-zh.sty` style provides special environments:
 - `weekplan` - Weekly planning environment for project reports
 
 Example:
+
 ```tex
 \begin{abstract}
   本周主要完成了项目的关键模块开发与实验验证。
@@ -158,6 +172,7 @@ All templates support comprehensive bibliography management:
 - Automatic formatting with `natbib` package
 
 Example citation usage:
+
 ```tex
 引用文献是学术写作的重要部分。例如，我们可以引用高德纳的经典著作\cite{knuth1984texbook}或LaTeX指南\cite{lamport1994latex}。
 ```
@@ -165,14 +180,19 @@ Example citation usage:
 ### Compilation with Bibliography
 
 For documents with references, use the complete compilation sequence:
+
+> [!CAUTION]
+> Always run the complete compilation sequence when your document includes bibliography. Skipping steps will result in missing or incorrect citations.
+
 ```bash
 xelatex document.tex    # First pass
-bibtex document         # Process bibliography  
+bibtex document         # Process bibliography
 xelatex document.tex    # Second pass
 xelatex document.tex    # Final pass
 ```
 
 Or use the provided LaTeXMK configuration which handles this automatically:
+
 ```bash
 cd zh/
 latexmk document.tex
