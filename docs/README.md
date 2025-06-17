@@ -11,7 +11,14 @@ This project provides tools and templates for high-quality document typesetting 
 - Pre-configured document classes for various publication types
 - Templates in multiple languages (English and Chinese)
 - Custom macros for streamlined document creation
-- Bibliography management tools
+- Bibliography management tools with comprehensive reference support
+- Chinese font configuration with multiple font options
+- Special environments for weekly reports and project planning
+- Presentation templates with sequential animation features
+- Table formatting with professional styling
+- Multi-column layout support
+- Mathematical notation and formula presentation
+- Optimized compilation configuration with LaTeXMK
 
 ## Getting Started
 
@@ -19,19 +26,26 @@ See the [Getting Started](getting-started.md) guide to begin using the typesetti
 
 ## Additional Resources
 
-- [Usage Guide](usage.md) - Detailed usage instructions
-- [Templates](templates.md) - Available document templates
+- [Getting Started](getting-started.md) - Quick start guide and installation
+- [Usage Guide](usage.md) - Detailed usage instructions and compilation
+- [Templates](templates.md) - Available document templates with examples
+- [Bibliography & References](bibliography.md) - Bibliography management and citation guide
 - [GitHub Releases](https://github.com/jiahaoxiang2000/typesetting/releases) - Download example PDFs
 - [Contributing](../CONTRIBUTING.md) - How to contribute to the project
 
 ## Language Support
 
-This project includes support for:
+This project includes comprehensive support for:
 
 - **English documents** - See the `en/` directory for templates
 - **Chinese documents** - See the `zh/` directory for templates
+  - Note template (`note-zh.tex`) with optional table of contents
+  - Report template (`report-zh.tex`) with weekly planning environments
+  - Presentation template (`slide-zh.tex`) with animation features
+  - Bibliography support with Chinese and English references
+  - Flexible CJK font configuration
 
-Each language has its own style files and examples to help you get started.
+Each language has its own style files and examples to help you get started. The Chinese templates include specialized features for academic and professional use.
 
 ## Preview PDF Examples
 

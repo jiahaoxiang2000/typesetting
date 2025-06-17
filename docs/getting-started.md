@@ -23,18 +23,29 @@ Before you begin, make sure you have:
 
    ```bash
    # For TeXLive
-   tlmgr install amsmath amsfonts amssymb graphicx hyperref booktabs microtype geometry setspace inputenc fontenc xcolor marginnote ctex
+   tlmgr install amsmath amsfonts amssymb graphicx hyperref booktabs microtype geometry setspace inputenc fontenc xcolor marginnote ctex tikz subcaption multirow multicol tcolorbox animate multimedia listings natbib bibentry
    ```
 
 :::tip
-If you've installed the complete LaTeX distribution, you can update all packages at once using the command `tlmgr update --self --all`. This eliminates the need to install packages manually.
+If you've installed the complete LaTeX distribution, you can update all packages at once using the command `tlmgr update --self --all`. This eliminates the need to install packages manually. For Chinese document support, ensure you have CJK fonts installed on your system (such as Noto CJK, Source Han fonts, or system fonts like STSong, STKaiti).
 :::
 
 ## Quick Start
 
-1. Choose a template from either the `en/` (English) or `zh/` (Chinese) directory as your starting point
+1. Choose a template from either the `en/` (English) or `zh/` (Chinese) directory as your starting point:
+   
+   **Chinese Templates:**
+   - `note-zh.tex` - For documentation and notes with optional TOC
+   - `report-zh.tex` - For weekly reports and project documentation
+   - `slide-zh.tex` - For presentations with animation features
+   
+   **English Templates:**
+   - Available in the `en/` directory
+
 2. Copy the template to your working directory
+
 3. Modify the template according to your needs
+
 4. Compile using appropriate LaTeX commands:
 
    For English documents (using pdfLaTeX):
@@ -56,7 +67,7 @@ If you've installed the complete LaTeX distribution, you can update all packages
    ```
 
 :::warning
-All templates need to link to the `styles/**.sty` files, so be sure to check that the `\usepackage{../styles/***}` paths are correct relative to your project directory. To reduce dependencies, each style file contains all the necessary packages you'll need.
+All templates need to link to the `styles/**.sty` files, so be sure to check that the `\usepackage{../styles/***}` paths are correct relative to your project directory. To reduce dependencies, each style file contains all the necessary packages you'll need. For Chinese documents, make sure you have appropriate CJK fonts installed.
 :::
 
 5. Alternatively, use the provided `.latexmkrc` file with:
