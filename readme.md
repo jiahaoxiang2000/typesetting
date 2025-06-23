@@ -1,6 +1,8 @@
-# LaTeX Typesetting Project
+# Typesetting Project
 
 A professional document preparation and typesetting system based on LaTeX.
+
+> **NOTE:** We are experimenting with the [Typst](https://github.com/typst/) typesetting system as a possible replacement for LaTeX. This is a one-time trial.
 
 ## Overview
 
