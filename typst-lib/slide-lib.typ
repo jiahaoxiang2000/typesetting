@@ -110,7 +110,7 @@
       },
       block(inset: (x: .5em), components.left-and-right(
         text(fill: self.colors.primary, weight: "bold", size: 1.2em, utils.call-or-display(self, self.store.header)),
-        text(fill: self.colors.primary.lighten(65%), utils.call-or-display(self, self.store.header-right)),
+        text(fill: self.colors.primary.lighten(65%), ""),
       )),
     )
   }

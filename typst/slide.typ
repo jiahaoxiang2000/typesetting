@@ -34,7 +34,7 @@
   subtitle: [使用 Touying 样式],
   author: [isomo],
   date: datetime.today(),
-  institution: [机构名称],
+  institution: [],
 ))
 
 #title-slide()
