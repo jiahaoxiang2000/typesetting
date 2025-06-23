@@ -37,10 +37,9 @@
     fill: blue.lighten(90%),
     stroke: 2pt + blue,
     radius: 5pt,
-    inset: 1em,
+    inset: 0.5em,
   )[
-    #text(weight: "bold", fill: blue.darken(20%), title)
-    #v(0.5em)
+    #text(weight: "bold", fill: blue.darken(20%), title) \
     #body
   ]
 }
@@ -51,10 +50,9 @@
     fill: red.lighten(90%),
     stroke: 2pt + red,
     radius: 5pt,
-    inset: 1em,
+    inset: 0.5em,
   )[
-    #text(weight: "bold", fill: red.darken(20%), title)
-    #v(0.5em)
+    #text(weight: "bold", fill: red.darken(20%), title) \
     #body
   ]
 }
@@ -65,25 +63,11 @@
     fill: green.lighten(90%),
     stroke: 2pt + green,
     radius: 5pt,
-    inset: 1em,
+    inset: 0.5em,
   )[
-    #text(weight: "bold", fill: green.darken(20%), title)
-    #v(0.5em)
+    #text(weight: "bold", fill: green.darken(20%), title) \
     #body
   ]
-}
-
-// Table utilities
-#let slide-table(columns: (), ..body) = {
-  table(
-    columns: columns,
-    stroke: (x, y) => {
-      if y == 0 { (bottom: 1pt + black) } else if y == 1 { (bottom: 0.5pt + gray) } else { none }
-    },
-    fill: (x, y) => if y == 0 { blue.lighten(80%) } else { none },
-    inset: 8pt,
-    ..body
-  )
 }
 
 // Math utilities

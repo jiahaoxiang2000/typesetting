@@ -1,6 +1,7 @@
 #import "../typst-lib/slide-lib.typ": *
 
 // Set Chinese fonts for the presentation
+// If the fonts are not installed, you can find new fonts to replace them. by the `typst fonts`.
 #set text(
   font: (
     "Noto Sans CJK SC", // Primary Chinese font
@@ -71,8 +72,7 @@
   这是一个警告框，用于警告用户。
 ]
 
-
-== 示例框框
+#pause
 
 #example-block(title: "示例框框")[
   这是一个示例框，用于展示示例。
@@ -108,17 +108,19 @@
 
 *简单表格示例*
 
-#slide-table(
-  columns: (auto, auto, auto),
-  [*左对齐*],
-  [*居中*],
-  [*右对齐*],
-  [数据1],
-  [数据2],
-  [数据3],
-  [长文本],
-  [短文本],
-  [100 #cite-style("ctex2020manual")],
+#table(
+  columns: (auto, auto),
+  inset: 10pt,
+  align: horizon,
+  table.header([*容量*], [*参数*]),
+  $ pi h (D^2 - d^2) / 4 $,
+  [
+    $h$: 高度 \
+    $D$: 外半径 \
+    $d$: 内半径
+  ],
+
+  $ sqrt(2) / 12 a^3 $, [$a$: 边长],
 )
 
 == 动画效果演示
