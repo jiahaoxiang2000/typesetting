@@ -1,4 +1,15 @@
-#import "../typst-lib/slide-lib.typ": *
+#import "@preview/touying:0.6.1": *
+#import themes.simple: *
+#import "@preview/cetz:0.3.2"
+#import "@preview/fletcher:0.5.5" as fletcher: edge, node
+#import "@preview/numbly:0.1.0": numbly
+#import "@preview/theorion:0.3.2": *
+#import cosmos.clouds: *
+#show: show-theorion
+
+// cetz and fletcher bindings for touying
+#let cetz-canvas = touying-reducer.with(reduce: cetz.canvas, cover: cetz.draw.hide.with(bounds: true))
+#let fletcher-diagram = touying-reducer.with(reduce: fletcher.diagram, cover: fletcher.hide)
 
 // Set Chinese fonts for the presentation
 // If the fonts are not installed, you can find new fonts to replace them. by the `typst fonts`.
@@ -12,164 +23,209 @@
     "Noto Sans", // Latin fallback
     "Roboto", // Final fallback
   ),
-  lang: "zh",
-  region: "cn",
+  // lang: "zh",
+  // region: "cn",
 )
+
+// Color shorthand functions
+#let redt(content) = text(fill: red, content)
+#let bluet(content) = text(fill: blue, content)
+#let greent(content) = text(fill: green, content)
+#let yellowt(content) = text(fill: yellow, content)
+#let oranget(content) = text(fill: orange, content)
+#let purplet(content) = text(fill: purple, content)
+#let greyt(content) = text(fill: gray, content)
+#let grayt(content) = text(fill: gray, content)
 
 // Additional font customization options:
 // For headings, you can use a different font:
 #show heading: set text(font: "Noto Serif CJK SC", weight: "bold")
-
 // For code blocks, you can use a monospace font:
 #show raw: set text(font: "Noto Sans Mono CJK SC")
 
-// For math, you can set math font:
-#set math.equation(numbering: "(1)")
-#show math.equation: set text(font: "New Computer Modern Math")
+#show: simple-theme.with(aspect-ratio: "16-9", footer: [Simple slides])
 
-#set heading(numbering: numbly("{1}.", default: "1.1"))
+#title-slide[
+  = Keep it simple 保持简单
+  #v(2em)
 
-#show: university-theme.with(aspect-ratio: "16-9", config-common(frozen-counters: (theorem-counter,)), config-info(
-  title: [幻灯片样例演示],
-  subtitle: [使用 Touying 样式],
-  author: [isomo],
-  date: datetime.today(),
-  institution: [],
-))
+  isomo #footnote[github/jiahaoxiang2000]
 
-#title-slide()
+  #v(2em)
+  #datetime.today().display()
+]
 
-== 大纲 <touying:hidden>
+= Animation
 
-#components.adaptive-columns(outline(title: none, indent: 1em))
+== Simple Animation
 
-= 介绍
+We can use `#pause` to #pause display something later.
 
-== 介绍
+#pause
 
-这是一个使用 Touying 的演示：
-
-1. 支持中文排版和格式 #pause
-  - 内置了多种实用的功能
-  - 提供现代化的排版效果 #pause
-  - 支持动画和交互效果
+Just like this.
 
 #meanwhile
 
-我们可以同时展示其他内容。
+Meanwhile, #pause we can also use `#meanwhile` to #pause display other content synchronously.
 
-= 特殊文本框
-
-== 文本框示例
-
-#note-block(title: "笔记框框")[
-  这是一个笔记框，用于补充说明。
+#speaker-note[
+  + This is a speaker note.
+  + You won't see it unless you use `config-common(show-notes-on-second-screen: right)`
 ]
 
-#pause
 
-#alert-block(title: "警告框框")[
-  这是一个警告框，用于警告用户。
-]
+== Complex Animation
 
-#pause
+At subslide #touying-fn-wrapper((self: none) => str(self.subslide)), we can
 
-#example-block(title: "示例框框")[
-  这是一个示例框，用于展示示例。
-]
+use #uncover("2-")[`#uncover` function] for reserving space,
 
-= 数学公式
+use #only("2-")[`#only` function] for not reserving space,
 
-== 数学公式示例
-
-爱因斯坦的质能方程：
-
-#pause
-
-#equation-block[$
-    E = m c^2
-  $]
+#alternatives[call `#only` multiple times \u{2717}][use `#alternatives` function #sym.checkmark] for choosing one of the alternatives.
 
 
-== 麦克斯韦方程组
+== Callback Style Animation
 
-麦克斯韦方程组：
+#slide(
+  repeat: 3,
+  self => [
+    #let (uncover, only, alternatives) = utils.methods(self)
 
-#equation-block[$
-      nabla dot bold(E) & = rho / epsilon_0                                             \
-      nabla dot bold(B) & = 0                                                           \
-    nabla times bold(E) & = -(partial bold(B))/(partial t)                              \
-    nabla times bold(B) & = mu_0 bold(J) + mu_0 epsilon_0 (partial bold(E))/(partial t)
-  $]
+    At subslide #self.subslide, we can
 
-= 表格和动画
+    use #uncover("2-")[`#uncover` function] for reserving space,
 
-== 表格示例
+    use #only("2-")[`#only` function] for not reserving space,
 
-*简单表格示例*
-
-#table(
-  columns: (auto, auto),
-  inset: 10pt,
-  align: horizon,
-  table.header([*容量*], [*参数*]),
-  $ pi h (D^2 - d^2) / 4 $,
-  [
-    $h$: 高度 \
-    $D$: 外半径 \
-    $d$: 内半径
+    #alternatives[call `#only` multiple times \u{2717}][use `#alternatives` function #sym.checkmark] for choosing one of the alternatives.
   ],
-
-  $ sqrt(2) / 12 a^3 $, [$a$: 边长],
 )
 
-== 动画效果演示
 
-使用 Touying 的强大动画功能：
+== Math Equation Animation
 
-#pause
+Equation with `pause`:
 
-这是第一段文字。
-
-#pause
-
-这是第二段文字，会在点击后出现。
-
-#pause
-
-这是第三段文字，演示了渐进式显示效果。
+$
+  f(x) & = pause x^2 + 2x + 1 \
+       & = pause (x + 1)^2    \
+$
 
 #meanwhile
 
-同时，我们还可以在侧边显示相关信息。
-
-= 参考文献
-
-== 参考资料
-
-主要参考资料：
+Here, #pause we have the expression of $f(x)$.
 
 #pause
 
-- #cite-style("ctex2020manual") CTeX 宏包手册，2020年版
-- Touying 官方文档
-- Typst 官方文档
-- LaTeX Beamer 用户手册
+By factorizing, we can obtain this result.
 
-#pause
 
-感谢使用 Touying 制作精美的中文演示文稿！
+== CeTZ Animation
 
-== 谢谢观看
+CeTZ Animation in Touying:
 
-#align(center + horizon)[
-  #text(size: 32pt, weight: "bold", fill: blue)[
-    谢谢观看！
-  ]
+#cetz-canvas({
+  import cetz.draw: *
 
-  #v(1em)
+  rect((0, 0), (5, 5))
 
-  #text(size: 16pt, fill: gray)[
-    Questions & Discussion
-  ]
+  (pause,)
+
+  rect((0, 0), (1, 1))
+  rect((1, 1), (2, 2))
+  rect((2, 2), (3, 3))
+
+  (pause,)
+
+  line((0, 0), (2.5, 2.5), name: "line")
+})
+
+
+== Fletcher Animation
+
+
+#fletcher-diagram(
+  node-stroke: .1em,
+  node-fill: gradient.radial(blue.lighten(80%), blue, center: (30%, 20%), radius: 80%),
+  spacing: 4em,
+  edge((-1, 0), "r", "-|>", `open(path)`, label-pos: 0, label-side: center),
+  node((0, 0), `reading`, radius: 2em),
+  edge((0, 0), (0, 0), `read()`, "--|>", bend: 130deg),
+  pause,
+  edge(`read()`, "-|>"),
+  node((1, 0), `eof`, radius: 2em),
+  pause,
+  edge(`close()`, "-|>"),
+  node((2, 0), `closed`, radius: 2em, extrude: (-2.5, 0)),
+  edge((0, 0), (2, 0), `close()`, "-|>", bend: -40deg),
+)
+
+
+= Theorems
+
+== Prime numbers
+
+#definition[
+  A natural number is called a #highlight[_prime number_] if it is greater
+  than 1 and cannot be written as the product of two smaller natural numbers.
 ]
+#example[
+  The numbers $2$, $3$, and $17$ are prime.
+  @cor_largest_prime shows that this list is not exhaustive!
+]
+
+#pagebreak(weak: true)
+#theorem(title: "Euclid")[
+  There are infinitely many primes.
+]
+#proof[
+  Suppose to the contrary that $p_1, p_2, dots, p_n$ is a finite enumeration
+  of all primes. Set $P = p_1 p_2 dots p_n$. Since $P + 1$ is not in our list,
+  it cannot be prime. Thus, some prime factor $p_j$ divides $P + 1$. Since
+  $p_j$ also divides $P$, it must divide the difference $(P + 1) - P = 1$, a
+  contradiction.
+]
+
+#pagebreak(weak: true)
+
+#corollary[
+  There is no largest prime number.
+] <cor_largest_prime>
+#corollary[
+  There are infinitely many composite numbers.
+]
+
+#theorem[
+  There are arbitrarily long stretches of composite numbers.
+]
+
+#proof[
+  For any $n > 2$, consider $ n! + 2, quad n! + 3, quad ..., quad n! + n $
+]
+
+
+= Others
+
+== Side-by-side
+
+#slide(composer: (1fr, 1fr))[
+  First column.
+][
+  Second column.
+]
+
+
+== Multiple Pages
+
+#lorem(200)
+
+
+#show: appendix
+
+= Appendix
+
+== Appendix
+
+Please pay attention to the current slide number.
