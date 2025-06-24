@@ -13,7 +13,7 @@
 
 // Set Chinese fonts for the presentation
 // If the fonts are not installed, you can find new fonts to replace them. by the `typst fonts`.
-#set text(
+/* #set text(
   font: (
     "Noto Sans CJK SC", // Primary Chinese font
     "Noto Serif CJK SC", // Alternative Chinese serif font
@@ -25,7 +25,7 @@
   ),
   // lang: "zh",
   // region: "cn",
-)
+) */
 
 // Color shorthand functions
 #let redt(content) = text(fill: red, content)

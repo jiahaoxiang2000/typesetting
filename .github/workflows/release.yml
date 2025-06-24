@@ -13,18 +13,17 @@ jobs:
   build:
     name: Create Release
     runs-on: ubuntu-latest
-    container:
-      image: registry.gitlab.com/islandoftex/images/texlive:latest
     steps:
-      # Configure Git to trust the workspace directory
-      - name: Configure Git
-        run: |
-          git config --global --add safe.directory "/__w/typesetting/typesetting"
-          
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 0 # We need full history to get commit messages
+
+      - name: Install Typst
+        run: |
+          curl -fsSL https://github.com/typst/typst/releases/latest/download/typst-x86_64-unknown-linux-musl.tar.xz | tar -xJ
+          sudo mv typst-x86_64-unknown-linux-musl/typst /usr/local/bin/
+          typst --version
 
       - name: Get previous tag
         id: previoustag
@@ -52,40 +51,21 @@ jobs:
             echo "EOF" >> $GITHUB_ENV
           fi
 
-      - name: Compile Chinese documents
+      - name: Compile Typst documents
         run: |
-          cd zh
+          cd typst
           mkdir -p build
-          find . -name "*.tex" -type f -not -path "./build/*" | while read file; do
-            filename=$(basename "$file" .tex)
-            echo "Compiling $filename.tex"
-            latexmk -xelatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape "$file"
-            if [ -f "$filename.pdf" ]; then
-              mv "$filename.pdf" "build/${filename}.pdf"
-            fi
-          done
-          cd ..
-
-      - name: Compile English documents
-        run: |
-          cd en
-          mkdir -p build
-          find . -name "*.tex" -type f -not -path "./build/*" | while read file; do
-            filename=$(basename "$file" .tex)
-            echo "Compiling $filename.tex"
-            latexmk -pdf -synctex=1 -interaction=nonstopmode -file-line-error "$file"
-            if [ -f "$filename.pdf" ]; then
-              mv "$filename.pdf" "build/${filename}.pdf"
-            fi
+          find . -name "*.typ" -type f -not -path "./build/*" | while read file; do
+            filename=$(basename "$file" .typ)
+            echo "Compiling $filename.typ"
+            typst compile "$file" "build/${filename}.pdf"
           done
           cd ..
 
       - name: List generated PDFs
         run: |
-          echo "Generated PDFs in zh/build:"
-          ls -la zh/build || echo "No PDFs found in zh/build"
-          echo "Generated PDFs in en/build:"
-          ls -la en/build || echo "No PDFs found in en/build"
+          echo "Generated PDFs in typst/build:"
+          ls -la typst/build || echo "No PDFs found in typst/build"
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
@@ -95,7 +75,6 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            zh/build/*.pdf
-            en/build/*.pdf
+            typst/build/*.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
