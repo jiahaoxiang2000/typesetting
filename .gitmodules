@@ -1,0 +1,6 @@
+[submodule "typst/.claude"]
+	path = typst/.claude
+	url = git@github.com:jiahaoxiang2000/claude-conf.git
+[submodule ".claude"]
+	path = .claude
+	url = git@github.com:jiahaoxiang2000/claude-conf.git
