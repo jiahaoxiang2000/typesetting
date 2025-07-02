@@ -1,87 +1,50 @@
 # Getting Started
 
-This guide will help you start using the LaTeX Typesetting system for your documents.
+## Installation
 
-## Prerequisites
+Install Typst using one of these methods:
 
-Before you begin, make sure you have:
+```bash
+# Using cargo (Rust package manager)
+cargo install typst-cli
 
-- LaTeX distribution (TeXLive, MiKTeX, or MacTeX) installed
-- A text editor or LaTeX IDE
-- Git (optional, for cloning the repository)
+# Using package managers
+# macOS
+brew install typst
 
-## Installation typesetting
+# Arch Linux  
+pacman -S typst
 
-1. Clone this repository:
+# Or download binary from GitHub
+# https://github.com/typst/typst/releases
+```
 
-   ```bash
-   git clone https://github.com/jiahaoxiang2000/typesetting.git
-   cd typesetting
-   ```
+## Basic Usage
 
-2. Install required LaTeX packages:
+1. Copy a template from `typst/` directory
+2. Edit the template file
+3. Compile to PDF:
 
-   ```bash
-   # For TeXLive
-   tlmgr install amsmath amsfonts amssymb graphicx hyperref booktabs microtype geometry setspace inputenc fontenc xcolor marginnote ctex tikz subcaption multirow multicol tcolorbox animate multimedia listings natbib bibentry
-   ```
+```bash
+typst compile document.typ
+```
 
-> [!TIP]
-> If you've installed the complete LaTeX distribution, you can update all packages at once using the command `tlmgr update --self --all`. This eliminates the need to install packages manually. For Chinese document support, ensure you have CJK fonts installed on your system (such as Noto CJK, Source Han fonts, or system fonts like STSong, STKaiti).
+## Templates
 
-## Quick Start
+- **note.typ** - Simple notes and documentation
+- **report.typ** - Professional reports with abstracts
+- **slide.typ** - Presentation slides
 
-1. Choose a template from either the `en/` (English) or `zh/` (Chinese) directory as your starting point:
+## Example
 
-   **Chinese Templates:**
+```typst
+#import "report.typ": *
 
-   - `note-zh.tex` - For documentation and notes with optional TOC
-   - `report-zh.tex` - For weekly reports and project documentation
-   - `slide-zh.tex` - For presentations with animation features
+#show: report.with(
+  title: "My Report",
+  author: "Your Name",
+)
 
-   **English Templates:**
-
-   - Available in the `en/` directory
-
-2. Copy the template to your working directory
-
-3. Modify the template according to your needs
-
-4. Compile using appropriate LaTeX commands:
-
-   For English documents (using pdfLaTeX):
-
-   ```bash
-   pdflatex document.tex
-   bibtex document  # if bibliography is used
-   pdflatex document.tex
-   pdflatex document.tex  # run twice for references
-   ```
-
-   For Chinese documents (using XeLaTeX):
-
-   ```bash
-   xelatex document.tex
-   bibtex document  # if bibliography is used
-   xelatex document.tex
-   xelatex document.tex  # run twice for references
-   ```
-
-> [!WARNING]
-> All templates need to link to the `styles/**.sty` files, so be sure to check that the `\usepackage{../styles/***}` paths are correct relative to your project directory. To reduce dependencies, each style file contains all the necessary packages you'll need. For Chinese documents, make sure you have appropriate CJK fonts installed.
-
-5. Alternatively, use the provided `.latexmkrc` file with:
-
-   ```bash
-   # For English documents
-   cd en/
-   latexmk -pdf document.tex
-
-   # For Chinese documents
-   cd zh/
-   latexmk document.tex  # Uses XeLaTeX as configured in zh/.latexmkrc
-   ```
-
-## Next Steps
-
-Once you've successfully compiled your first document, see the [Usage Guide](usage.md) for more detailed information and the [Templates](templates.md) page for specific template information.
+= Introduction
+Your content here...
+```
