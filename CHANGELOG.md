@@ -4,7 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-*No unreleased changes*
+### Added
+- Created v1.2.0 git tag and automated release
+- GitHub Actions workflow generates PDFs automatically on release
+- New response.typ template for academic paper rebuttals using bamdone-rebuttal package
 
 ## [v1.2.0] - 2025-07-02
 
