@@ -1,4 +1,4 @@
-# Contributing to LaTeX Typesetting Project
+# Contributing to Typst Templates Project
 
 Thank you for your interest in contributing to this project! Here's how you can help.
 
@@ -12,8 +12,8 @@ By participating in this project, you agree to maintain a respectful and inclusi
 
 - Check if the bug has already been reported in the Issues section
 - Include a clear title and description
-- Provide a minimal working example (MWE) that reproduces the issue
-- Specify your LaTeX distribution and version
+- Provide a minimal working example that reproduces the issue
+- Specify your Typst version (`typst --version`)
 
 ### Suggesting Enhancements
 
@@ -27,35 +27,35 @@ By participating in this project, you agree to maintain a respectful and inclusi
 1. Fork the repository
 2. Create a new branch for your feature or bugfix
 3. Make your changes
-4. Run tests to ensure your changes don't break existing functionality
+4. Test compilation with `typst compile` to ensure your changes work
 5. Submit a pull request
 
-## LaTeX Style Guidelines
+## Typst Style Guidelines
 
-- Use 2-space indentation for LaTeX code
-- Follow consistent naming conventions for macros and environments
+- Use consistent indentation (2 spaces)
+- Follow Typst naming conventions for functions and variables
 - Include comments for complex code sections
-- Avoid hardcoding values; use variables and parameters instead
+- Use parameters and variables instead of hardcoded values
 
 ## Documentation Guidelines
 
 - Update documentation for any changed functionality
 - Include examples in documentation
-- Document any new macros or environments with their parameters
+- Document any new functions or features with their parameters
 - Use clear, concise language
 
 ## Template Guidelines
 
 - Templates should be minimal and well-documented
 - Include example usage in comments
-- Ensure templates compile without errors on standard LaTeX distributions
-- Don't include unnecessary packages
+- Ensure templates compile without errors with latest Typst
+- Don't include unnecessary dependencies
 
 ## Testing
 
 - Provide test documents that demonstrate your changes
-- Ensure your changes compile with pdfLaTeX, XeLaTeX, and LuaLaTeX if possible
-- Test on multiple LaTeX distributions if possible
+- Ensure your changes compile with `typst compile`
+- Test templates with different content types (text, math, figures, etc.)
 
 ## Questions?
 
