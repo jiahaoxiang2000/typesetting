@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+*No unreleased changes*
+
+## [v1.2.0] - 2025-07-02
+
 ### Changed
 - **BREAKING**: Migrated from LaTeX to Typst-only approach
 - Removed all LaTeX templates (.tex files) and style files (.sty files)
@@ -11,6 +15,7 @@ All notable changes to this project will be documented in this file.
 - Simplified docs/ folder structure for better usability
 - Updated CONTRIBUTING.md for Typst development guidelines
 - Corrected version dates in CHANGELOG.md based on actual git tag dates
+- Improved PDF preview section with better user experience
 
 ### Removed
 - LaTeX templates: note-zh.tex, report-zh.tex, slide-zh.tex, report.tex
@@ -22,6 +27,7 @@ All notable changes to this project will be documented in this file.
 - Concise documentation focused on Typst usage
 - Comprehensive CHANGELOG.md organized by git tags
 - Updated CONTRIBUTING.md with Typst development guidelines
+- Enhanced PDF preview section with descriptive template information
 
 ## [v1.1.1] - 2025-06-30
 
