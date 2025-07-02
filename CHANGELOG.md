@@ -10,15 +10,18 @@ All notable changes to this project will be documented in this file.
 - Updated documentation to focus exclusively on Typst usage
 - Simplified docs/ folder structure for better usability
 - Updated CONTRIBUTING.md for Typst development guidelines
+- Corrected version dates in CHANGELOG.md based on actual git tag dates
 
 ### Removed
 - LaTeX templates: note-zh.tex, report-zh.tex, slide-zh.tex, report.tex
 - LaTeX style files: note-zh.sty, report-zh.sty, slide-zh.sty, report-en.sty
-- LaTeX-specific documentation files
+- LaTeX-specific documentation files (bibliography.md, docs/CONTRIBUTING.md)
 
 ### Added
 - Typst templates: note.typ, report.typ, slide.typ
 - Concise documentation focused on Typst usage
+- Comprehensive CHANGELOG.md organized by git tags
+- Updated CONTRIBUTING.md with Typst development guidelines
 
 ## [v1.1.1] - 2025-06-30
 
