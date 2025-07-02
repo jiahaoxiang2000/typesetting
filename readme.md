@@ -1,17 +1,15 @@
 # Typesetting Project
 
-A professional document preparation and typesetting system based on LaTeX.
-
-> **NOTE:** We are experimenting with the [Typst](https://github.com/typst/) typesetting system as a possible replacement for LaTeX. This is a one-time trial.
+A professional document preparation and typesetting system based on Typst.
 
 ## Overview
 
-This project provides tools and templates for high-quality document typesetting using LaTeX. It's designed for academic papers, technical documentation, books, and other professional documents requiring precise formatting and layout.
+This project provides tools and templates for high-quality document typesetting using Typst. It's designed for academic papers, technical documentation, books, and other professional documents requiring precise formatting and layout.
 
 ## Features
 
-- Pre-configured document classes for various publication types
-- Custom macros for streamlined document creation
+- Pre-configured document templates for various publication types
+- Custom functions for streamlined document creation
 - Bibliography management tools
 - Mathematical equation support
 - Figure and table management
@@ -19,9 +17,9 @@ This project provides tools and templates for high-quality document typesetting 
 
 ## Requirements
 
-- LaTeX distribution (TeXLive, MiKTeX, or MacTeX)
-- A text editor or LaTeX IDE
-- (Optional) Bibliography management software like BibTeX or BibLaTeX
+- Typst (latest version recommended)
+- A text editor with Typst support
+- (Optional) Bibliography management software for .bib files
 
 ## Getting Started
 
@@ -32,14 +30,15 @@ This project provides tools and templates for high-quality document typesetting 
    cd typesetting
    ```
 
-2. Install required LaTeX packages:
+2. Install Typst:
 
    ```bash
-   # For TeXLive
-   tlmgr install package1 package2
+   # Using cargo
+   cargo install typst-cli
+   # Or download from https://github.com/typst/typst/releases
    ```
 
-3. Choose a template from the `templates/` directory and start working on your document.
+3. Choose a template from the `typst/` directory and start working on your document.
 
 ## Usage
 
@@ -53,9 +52,9 @@ You can view example PDF files without having to compile them yourself by visiti
 
 ```
 typesetting/
-├── styles/          # Custom style files
-├── zh/              # Chinese templates
-├── en/              # English templates
+├── typst/           # Typst templates and examples
+├── zh/              # Chinese bibliography files
+├── en/              # English bibliography files
 ├── docs/            # Documentation (Docsify)
 └── .github/         # GitHub Actions workflows
 ```

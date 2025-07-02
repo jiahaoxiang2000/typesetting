@@ -1,25 +1,22 @@
-# LaTeX Typesetting Project Documentation
+# Typst Typesetting Project Documentation
 
-Welcome to the documentation for the LaTeX Typesetting Project.
+Welcome to the documentation for the Typst Typesetting Project.
 
 ## Overview
 
 > [!NOTE]
-> This project provides tools and templates for high-quality document typesetting using _LaTeX_. It's designed for **academic papers**, **technical documentation**, **books**, and other professional documents requiring precise formatting and layout.
+> This project provides tools and templates for high-quality document typesetting using _Typst_. It's designed for **academic papers**, **technical documentation**, **books**, and other professional documents requiring precise formatting and layout.
 
 ## Features
 
-- Pre-configured document classes for various publication types
+- Pre-configured document templates for various publication types
 - Templates in multiple languages (English and Chinese)
-- Custom macros for streamlined document creation
+- Custom functions for streamlined document creation
 - Bibliography management tools with comprehensive reference support
 - Chinese font configuration with multiple font options
-- Special environments for weekly reports and project planning
-- Presentation templates with sequential animation features
 - Table formatting with professional styling
-- Multi-column layout support
 - Mathematical notation and formula presentation
-- Optimized compilation configuration with LaTeXMK
+- Fast compilation with Typst
 
 ## Getting Started
 
@@ -39,15 +36,15 @@ See the [Getting Started](getting-started.md) guide to begin using the typesetti
 > [!NOTE]
 > This project includes comprehensive support for:
 >
-> - **English documents** - See the `en/` directory for templates
-> - **Chinese documents** - See the `zh/` directory for templates
->   - Note template (`note-zh.tex`) with optional table of contents
->   - Report template (`report-zh.tex`) with weekly planning environments
->   - Presentation template (`slide-zh.tex`) with animation features
+> - **English documents** - See the `typst/` directory for templates
+> - **Chinese documents** - See the `typst/` directory for templates
+>   - Note template (`note.typ`) for documentation
+>   - Report template (`report.typ`) for professional reports
+>   - Slide template (`slide.typ`) for presentations
 >   - Bibliography support with Chinese and English references
 >   - Flexible CJK font configuration
 
-Each language has its own style files and examples to help you get started. The Chinese templates include specialized features for academic and professional use.
+Each template includes examples to help you get started. The templates include specialized features for academic and professional use.
 
 ## Preview PDF Examples
 
