@@ -2,6 +2,4 @@
 - [Getting Started](getting-started.md)
 - [Usage Guide](usage.md)
 - [Templates](templates.md)
-- [Bibliography & References](bibliography.md)
 - [Downloads](https://github.com/jiahaoxiang2000/typesetting/releases)
-- [Contributing](CONTRIBUTING.md)
