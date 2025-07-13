@@ -4,10 +4,25 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [v1.3.0] - 2025-07-13
+
+### Changed
+- **BREAKING**: Reorganized templates by use case for better discoverability
+- Moved templates from centralized `typst/` folder to use-case directories:
+  - `academic/` - Contains report.typ and response.typ for research documents
+  - `presentations/` - Contains slide.typ for presentation materials
+  - `documents/` - Contains note.typ for general documentation
+- Updated GitHub Actions workflow to work with new directory structure
+- Enhanced compilation process with `--root` flag for bibliography access
+
 ### Added
-- Created v1.2.0 git tag and automated release
-- GitHub Actions workflow generates PDFs automatically on release
-- New response.typ template for academic paper rebuttals using bamdone-rebuttal package
+- Comprehensive CLAUDE.md documentation for development guidance
+- Use-case based template organization for improved user experience
+- Enhanced build process with directory-prefixed PDF naming (e.g., academic_report.pdf)
+
+### Fixed
+- Bibliography path references updated for new structure
+- GitHub Actions compilation workflow adapted to new directory layout
 
 ## [v1.2.0] - 2025-07-02
 
@@ -26,6 +41,9 @@ All notable changes to this project will be documented in this file.
 - LaTeX-specific documentation files (bibliography.md, docs/CONTRIBUTING.md)
 
 ### Added
+- Created v1.2.0 git tag and automated release
+- GitHub Actions workflow generates PDFs automatically on release
+- New response.typ template for academic paper rebuttals using bamdone-rebuttal package
 - Typst templates: note.typ, report.typ, slide.typ
 - Concise documentation focused on Typst usage
 - Comprehensive CHANGELOG.md organized by git tags
