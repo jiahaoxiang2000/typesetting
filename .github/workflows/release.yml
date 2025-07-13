@@ -58,19 +58,18 @@ jobs:
 
       - name: Compile Typst documents
         run: |
-          cd typst
           mkdir -p build
-          find . -name "*.typ" -type f -not -path "./build/*" | while read file; do
+          find . -name "*.typ" -type f | while read file; do
             filename=$(basename "$file" .typ)
-            echo "Compiling $filename.typ"
-            typst compile "$file" "build/${filename}.pdf"
+            dirname=$(dirname "$file")
+            echo "Compiling $file"
+            typst compile --root . "$file" "build/${dirname}_${filename}.pdf"
           done
-          cd ..
 
       - name: List generated PDFs
         run: |
-          echo "Generated PDFs in typst/build:"
-          ls -la typst/build || echo "No PDFs found in typst/build"
+          echo "Generated PDFs in build:"
+          ls -la build || echo "No PDFs found in build"
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
@@ -80,6 +79,6 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            typst/build/*.pdf
+            build/*.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
