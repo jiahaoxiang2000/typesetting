@@ -4,15 +4,17 @@ A professional document preparation and typesetting system based on Typst.
 
 ## Overview
 
-This project provides tools and templates for high-quality document typesetting using Typst. It's designed for academic papers, technical documentation, books, and other professional documents requiring precise formatting and layout.
+This project provides tools and templates for high-quality document typesetting using Typst. It's designed for academic papers, technical documentation, presentations, and other professional documents requiring precise formatting and layout.
 
 ## Features
 
-- Pre-configured document templates for various publication types
-- Custom functions for streamlined document creation
-- Bibliography management tools
-- Mathematical equation support
-- Figure and table management
+- Pre-configured document templates organized by use case
+- Academic report templates with Chinese support
+- Advanced presentation templates with animations
+- Simple note templates for documentation
+- Shared bibliography management
+- Mathematical equation and theorem support
+- Figure and table management with captions
 - Cross-referencing system
 
 ## Requirements
@@ -38,11 +40,35 @@ This project provides tools and templates for high-quality document typesetting 
    # Or download from https://github.com/typst/typst/releases
    ```
 
-3. Choose a template from the `typst/` directory and start working on your document.
+3. Choose a template from the appropriate directory and start working on your document.
 
-## Usage
+## Template Usage
 
-Check out our [online documentation](https://jiahaoxiang2000.github.io/typesetting/) for detailed usage instructions.
+### Compile a Document
+
+```bash
+# Compile a single document
+typst compile <filename>.typ
+
+# Compile with bibliography support (recommended)
+typst compile --root . <filename>.typ <output>.pdf
+
+# Compile all templates
+find . -name "*.typ" -type f | while read file; do
+    typst compile --root . "$file" "${file%.typ}.pdf"
+done
+```
+
+### Available Templates
+
+- **Academic Reports** (`academic/report.typ`): Feature-rich Chinese weekly reports
+- **Academic Rebuttals** (`academic/response.typ`): Paper response templates
+- **Presentations** (`presentations/slide.typ`): Advanced slides with animations
+- **Simple Notes** (`documents/note.typ`): Basic documentation templates
+
+## Online Documentation
+
+Check out our [online documentation](https://jiahaoxiang2000.github.io/typesetting/) for detailed usage instructions and examples.
 
 ## Preview Examples
 
@@ -52,11 +78,16 @@ You can view example PDF files without having to compile them yourself by visiti
 
 ```
 typesetting/
-├── typst/           # Typst templates and examples
-├── zh/              # Chinese bibliography files
-├── en/              # English bibliography files
-├── docs/            # Documentation (Docsify)
-└── .github/         # GitHub Actions workflows
+├── academic/           # Academic and research documents
+│   ├── report.typ      # Weekly reports and academic reports
+│   └── response.typ    # Paper rebuttals
+├── presentations/      # Presentation materials  
+│   └── slide.typ       # Slides with animations and theorems
+├── documents/          # General documents
+│   └── note.typ        # Simple notes and documentation
+├── references.bib      # Shared bibliography file
+├── docs/               # Documentation (Docsify-based)
+└── .github/workflows/  # CI/CD automation
 ```
 
 ## Contributing
