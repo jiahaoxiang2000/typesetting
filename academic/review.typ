@@ -61,6 +61,10 @@
   #text(size: 18pt, weight: "bold")[
     Academic Paper Review Report
   ]
+  #v(0.5em)
+  #text(size: 12pt)[
+    Review Date: #datetime.today().display("[year]-[month]-[day]")
+  ]
 ]
 
 #v(1em)
@@ -73,7 +77,6 @@
     columns: (auto, 1fr),
     gutter: 1em,
     [*Paper Title:*], [],
-
     [*Manuscript ID:*], [],
     [*Journal/Conference:*], [],
   )
@@ -82,59 +85,47 @@
 #v(1em)
 
 
-= Review
+= Review Summary
+
+#lorem(10)
+
 
 = Detailed Review
 
 == Innovation Assessment
 
-*Evaluation criteria:*
-- Novelty of the research problem and approach
-- Significance of contribution to the field
-- Comparison with existing state-of-the-art methods
-- Potential impact on future research
+#lorem(10)
+
 
 == Technical Quality Assessment
 
-*Evaluation criteria:*
-- Soundness of methodology and theoretical foundation
-- Correctness of algorithms and mathematical formulations
-- Appropriateness of chosen techniques for the problem
-- Technical depth and rigor
+#lorem(10)
+
 
 == Experimental Assessment
 
-*Evaluation criteria:*
-- Experimental design and setup adequacy
-- Dataset selection and preprocessing quality
-- Baseline comparisons and evaluation metrics
-- Statistical significance and reproducibility
-- Ablation studies and parameter analysis
+#lorem(10)
+
 
 == Writing Quality Assessment
 
-*Evaluation criteria:*
-- Clarity and organization of presentation
-- Grammar, spelling, and language quality
-- Figure and table quality and relevance
-- Related work coverage and positioning
-- Abstract and conclusion effectiveness
+#lorem(10)
 
 = Specific Revision Suggestions
 
 == Major Issues
 
+#lorem(10)
 
 
 == Minor Issues
 
+#lorem(10)
+
 
 = Review Comments
 
-#lorem(50)
-
-- #redt[Major Issue 1]: The methodology lacks clarity in the experimental setup.
-- #bluet[Minor Issue 1]: The introduction could benefit from more recent references.
+#lorem(10)
 
 
 #v(1em)

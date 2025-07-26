@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+- Academic paper review template with scoring and comments
+- MCP configuration for github-repo-mcp integration
+
+### Enhanced  
+- Academic note template with custom styling and features
+- Point function in response.typ to display content in bold for better visual distinction
+
+### Changed
+- Simplified scoring and comment box functions in review template for better readability
+
+### Documentation
+- Updated README.md to reflect current project structure
+
 ## [v1.3.0] - 2025-07-13
 
 ### Changed
