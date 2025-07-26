@@ -10,6 +10,7 @@ This project provides tools and templates for high-quality document typesetting 
 
 - Pre-configured document templates organized by use case
 - Academic report templates with Chinese support
+- Academic paper review templates with scoring system
 - Advanced presentation templates with animations
 - Simple note templates for documentation
 - Shared bibliography management
@@ -62,7 +63,8 @@ done
 ### Available Templates
 
 - **Academic Reports** (`academic/report.typ`): Feature-rich Chinese weekly reports
-- **Academic Rebuttals** (`academic/response.typ`): Paper response templates
+- **Academic Reviews** (`academic/review.typ`): Paper review templates with scoring system
+- **Academic Rebuttals** (`academic/response.typ`): Paper response templates with bold point formatting
 - **Presentations** (`presentations/slide.typ`): Advanced slides with animations
 - **Simple Notes** (`documents/note.typ`): Basic documentation templates
 
@@ -80,7 +82,8 @@ You can view example PDF files without having to compile them yourself by visiti
 typesetting/
 ├── academic/           # Academic and research documents
 │   ├── report.typ      # Weekly reports and academic reports
-│   └── response.typ    # Paper rebuttals
+│   ├── review.typ      # Paper review templates with scoring system
+│   └── response.typ    # Paper rebuttals with enhanced formatting
 ├── presentations/      # Presentation materials  
 │   └── slide.typ       # Slides with animations and theorems
 ├── documents/          # General documents

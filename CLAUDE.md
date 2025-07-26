@@ -38,8 +38,9 @@ done
 typesetting/
 ├── academic/           # Academic and research documents
 │   ├── report.typ      # Weekly reports and academic reports
+│   ├── review.typ      # Paper review templates with scoring system
 │   └── response.typ    # Paper rebuttals (uses bamdone-rebuttal)
-├── presentations/      # Presentation materials  
+├── presentations/      # Presentation materials
 │   └── slide.typ       # Slides with animations and theorems
 ├── documents/          # General documents
 │   └── note.typ        # Simple notes and documentation
@@ -51,14 +52,22 @@ typesetting/
 ### Template Types by Use Case
 
 #### Academic Templates (`academic/`)
+
 1. **report.typ**: Feature-rich Chinese weekly report template with:
    - Custom color functions (redt, bluet, greent, etc.)
    - Week planning boxes
    - Table and figure management
    - Bibliography support
-2. **response.typ**: Academic rebuttal template using `@preview/bamdone-rebuttal:0.1.1`
+2. **review.typ**: Academic paper review template with:
+   - Scoring system with customizable score boxes
+   - Structured review sections (Innovation, Technical Quality, Experimental, Writing)
+   - Comment boxes for detailed feedback
+   - Color shorthand functions for highlighting issues
+3. **response.typ**: Academic rebuttal template using `@preview/bamdone-rebuttal:0.1.1`
+   - Enhanced with bold point formatting for better visual distinction
 
 #### Presentation Templates (`presentations/`)
+
 1. **slide.typ**: Advanced presentation template with:
    - Touying framework for animations
    - CeTZ and Fletcher diagram support
@@ -66,15 +75,17 @@ typesetting/
    - Chinese font support
 
 #### Document Templates (`documents/`)
+
 1. **note.typ**: Simple document template using `@preview/basic-document-props:0.1.0`
 
 #### Shared Resources
+
 1. **references.bib**: Common bibliography file (in project root for easy access)
 
 ### Key Dependencies
 
-- `@preview/basic-document-props:0.1.0` - Document properties package (documents/note.typ)
-- `@preview/bamdone-rebuttal:0.1.1` - Academic rebuttal package (academic/response.typ)  
+- `@preview/basic-document-props:0.1.0` - Document properties package (documents/note.typ, academic/review.typ)
+- `@preview/bamdone-rebuttal:0.1.1` - Academic rebuttal package (academic/response.typ)
 - `@preview/touying:0.6.1` - Presentation framework (presentations/slide.typ)
 - `@preview/cetz:0.3.2` - Drawing package for diagrams (presentations/slide.typ)
 - `@preview/fletcher:0.5.5` - Flowchart diagrams (presentations/slide.typ)
