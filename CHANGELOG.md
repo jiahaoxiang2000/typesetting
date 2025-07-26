@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [v1.4.0] - 2025-07-26
+
 ### Added
 - Academic paper review template with scoring and comments
 - MCP configuration for github-repo-mcp integration
@@ -14,6 +16,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 - Simplified scoring and comment box functions in review template for better readability
+- Streamlined academic review template structure with cleaner layout
 
 ### Documentation
 - Updated README.md to reflect current project structure
