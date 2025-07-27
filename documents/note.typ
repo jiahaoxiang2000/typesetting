@@ -8,6 +8,8 @@
   supress-mail-link: false,
 )
 
+#set heading(numbering: "1.1")
+
 = Titel
 #lorem(200)
 
