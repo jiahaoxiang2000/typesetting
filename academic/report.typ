@@ -3,9 +3,8 @@
 // Chinese font configuration
 // #set text(
 //   font: (
-//     "Noto Sans CJK SC", // Primary Chinese font
 //     "Noto Serif CJK SC", // Alternative Chinese serif font
-//     "Noto Sans", // Latin fallback
+//     "Noto Sans CJK SC", // Primary Chinese font
 //   ),
 //   lang: "zh",
 //   region: "cn",
@@ -20,7 +19,8 @@
   number-align: center,
 )
 
-// Heading styles
+// Heading styles and numbering
+#set heading(numbering: "1.1")
 #show heading.where(level: 1): set text(size: 16pt, weight: "bold")
 #show heading.where(level: 2): set text(size: 14pt, weight: "bold")
 
