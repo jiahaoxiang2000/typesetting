@@ -9,6 +9,7 @@
 //   lang: "zh",
 //   region: "cn",
 // )
+// #show heading: set text(font: "Noto Sans CJK SC")
 
 // Document setup
 #set document(title: "周报 isomo", author: "isomo", date: datetime.today())
