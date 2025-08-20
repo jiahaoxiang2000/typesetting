@@ -11,8 +11,15 @@
 //   region: "cn",
 // )
 
+// Document configuration
+#let document-author = "isomo"
+
 // Document setup
-#set document(title: "Academic Paper Review", author: "isomo", date: datetime.today())
+#set document(
+  title: "SiWB: A 28nm 800MHz 4.2-to-14.2Gbps/W Configurable Multi-core Architecture for White-box Block Cipher with Area-efficient Random Linear Transformation and Load-aware Inter-core Scheduling",
+  author: document-author,
+  date: datetime.today(),
+)
 
 // Page setup
 #set page(
@@ -63,6 +70,7 @@
   ]
   #v(0.5em)
   #text(size: 12pt)[
+    Reviewer: #document-author
     Review Date: #datetime.today().display("[year]-[month]-[day]")
   ]
 ]
@@ -126,16 +134,6 @@
 = Review Comments
 
 #lorem(10)
-
-
-#v(1em)
-
-#align(right)[
-  #text(size: 11pt)[
-    Reviewer: isomo \
-    Review Date: #datetime.today().display("[year]-[month]-[day]")
-  ]
-]
 
 // Bibliography section
 // #bibliography("../references.bib", style: "apa")
