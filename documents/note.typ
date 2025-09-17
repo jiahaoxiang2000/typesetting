@@ -19,6 +19,9 @@
 // #show heading: set text(font: "Noto Sans CJK SC")
 
 #set heading(numbering: "1.1")
+#set math.equation(numbering: "(1)")
+#set text(lang: "en")
+#show table: it => align(center, it)
 
 = Titel
 #lorem(200)
