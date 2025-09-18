@@ -67,7 +67,8 @@ done
 - **Academic Reports** (`academic/report.typ`): Feature-rich Chinese weekly reports
 - **Academic Reviews** (`academic/review.typ`): Paper review templates with scoring system
 - **Academic Rebuttals** (`academic/response.typ`): Paper response templates with bold point formatting
-- **Presentations** (`presentations/slide.typ`): Advanced slides with animations
+- **Simple Presentations** (`presentations/simple.typ`): Advanced slides with animations
+- **University Presentations** (`presentations/university.typ`): Enhanced presentation template with institutional branding
 - **Simple Notes** (`documents/note.typ`): Basic documentation templates
 
 ## Online Documentation
@@ -83,7 +84,8 @@ typesetting/
 │   ├── review.typ      # Paper review templates with scoring system
 │   └── response.typ    # Paper rebuttals with enhanced formatting
 ├── presentations/      # Presentation materials
-│   └── slide.typ       # Slides with animations and theorems
+│   ├── simple.typ      # Basic slides with animations and theorems
+│   └── university.typ  # University presentations with institutional branding
 ├── documents/          # General documents
 │   └── note.typ        # Simple notes and documentation
 ├── references.bib      # Shared bibliography file

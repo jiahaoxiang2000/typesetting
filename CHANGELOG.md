@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+- University presentation template with enhanced styling and institutional branding
+
+### Changed
+- Renamed `presentations/slide.typ` to `presentations/simple.typ` for better naming clarity
+- Reorganized presentation templates to provide both simple and university options
+
 ## [v1.4.0] - 2025-07-26
 
 ### Added
