@@ -11,12 +11,12 @@
 // Chinese font configuration
 // #set text(
 //   font: (
-//     "Noto Serif CJK SC", // Primary Chinese serif font for main content
+//     "Source Han Serif SC", // Primary Chinese serif font for main content
 //   ),
 //   lang: "zh",
 //   region: "cn",
 // )
-// #show heading: set text(font: "Noto Sans CJK SC")
+// #show heading: set text(font: "Source Han Sans SC")
 
 #set heading(numbering: "1.1")
 #set math.equation(numbering: "(1)")

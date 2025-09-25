@@ -3,9 +3,8 @@
 // Chinese font configuration
 // #set text(
 //   font: (
-//     "Noto Sans CJK SC", // Primary Chinese font
-//     "Noto Serif CJK SC", // Alternative Chinese serif font
-//     "Noto Sans", // Latin fallback
+//     "Source Han Serif SC", // Alternative Chinese serif font
+//     "Source Han Sans SC", // Primary Chinese font
 //   ),
 //   lang: "zh",
 //   region: "cn",

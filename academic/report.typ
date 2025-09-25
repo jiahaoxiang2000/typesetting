@@ -3,13 +3,13 @@
 // Chinese font configuration
 // #set text(
 //   font: (
-//     "Noto Serif CJK SC", // Alternative Chinese serif font
-//     "Noto Sans CJK SC", // Primary Chinese font
+//     "Source Han Serif SC", // Alternative Chinese serif font
+//     "Source Han Sans SC", // Primary Chinese font
 //   ),
 //   lang: "zh",
 //   region: "cn",
 // )
-// #show heading: set text(font: "Noto Sans CJK SC")
+// #show heading: set text(font: "Source Han Sans SC")
 
 // Document setup
 #set document(title: "周报 isomo", author: "isomo", date: datetime.today())
@@ -60,11 +60,16 @@
 #v(1em)
 
 // Week plan box
-#rect(width: 100%, stroke: 1pt, inset: 10pt, [
-  #text(weight: "bold")[本周计划]
+#rect(
+  width: 100%,
+  stroke: 1pt,
+  inset: 10pt,
+  [
+    #text(weight: "bold")[本周计划]
 
-  1) 完成第二阶段算法优化工作 2) 开始撰写实验章节 3) 准备下周的项目进度汇报演示文稿
-])
+    1) 完成第二阶段算法优化工作 2) 开始撰写实验章节 3) 准备下周的项目进度汇报演示文稿
+  ],
+)
 
 
 = 工作进展

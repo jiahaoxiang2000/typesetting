@@ -13,19 +13,13 @@
 
 // Set Chinese fonts for the presentation
 // If the fonts are not installed, you can find new fonts to replace them. by the `typst fonts`.
-/* #set text(
-  font: (
-    "Noto Sans CJK SC", // Primary Chinese font
-    "Noto Serif CJK SC", // Alternative Chinese serif font
-    "WenQuanYi Micro Hei", // Chinese fallback font
-    "FZShuSong-Z01", // Traditional Chinese font
-    "HYZhongSongJ", // Another Chinese font option
-    "Noto Sans", // Latin fallback
-    "Roboto", // Final fallback
-  ),
-  // lang: "zh",
-  // region: "cn",
-) */
+// #set text(
+//   font: (
+//     "Source Han Serif SC", // Alternative Chinese serif font
+//   ),
+//   // lang: "zh",
+//   // region: "cn",
+// )
 
 // Color shorthand functions
 #let redt(content) = text(fill: red, content)
@@ -39,9 +33,8 @@
 
 // Additional font customization options:
 // For headings, you can use a different font:
-#show heading: set text(font: "Noto Serif CJK SC", weight: "bold")
-// For code blocks, you can use a monospace font:
-#show raw: set text(font: "Noto Sans Mono CJK SC")
+// #show heading: set text(font: "Source Han Serif SC", weight: "bold")
+// #show raw: set text(font: "Source Han Mono SC")
 
 #show: simple-theme.with(aspect-ratio: "16-9", footer: [Simple slides])
 
@@ -110,7 +103,7 @@ Equation with `pause`:
 
 $
   f(x) & = pause x^2 + 2x + 1 \
-       & = pause (x + 1)^2    \
+  & = pause (x + 1)^2 \
 $
 
 #meanwhile
