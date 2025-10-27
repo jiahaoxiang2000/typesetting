@@ -20,6 +20,10 @@
   number-align: center,
 )
 
+// Paragraph layout - full justification with hyphenation
+#set par(justify: true)
+#set text(hyphenate: true)
+
 // Heading styles and numbering
 #set heading(numbering: "1.1")
 #show heading.where(level: 1): set text(size: 16pt, weight: "bold")
