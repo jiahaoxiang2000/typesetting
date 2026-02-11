@@ -92,46 +92,31 @@
 
 #v(1em)
 
-
+// This section is for the author response.
 = Review Summary
 
-#lorem(10)
+// First paragraph:
+Summarize the manuscript's major contributions, then concisely describe the key issues, and finally provide a recommendation (reject/major revision/minor revision).
+// Second paragraph:
+List the issues point by point.
 
 
+// This section is for the editor and supports the review above.
 = Detailed Review
 
 == Innovation Assessment
 
 #lorem(10)
 
-
 == Technical Quality Assessment
 
 #lorem(10)
-
 
 == Experimental Assessment
 
 #lorem(10)
 
-
 == Writing Quality Assessment
-
-#lorem(10)
-
-= Specific Revision Suggestions
-
-== Major Issues
-
-#lorem(10)
-
-
-== Minor Issues
-
-#lorem(10)
-
-
-= Review Comments
 
 #lorem(10)
 
