@@ -1,6 +1,6 @@
 #import "@preview/basic-document-props:0.1.0": simple-page
 #show: simple-page.with(
-  "isomo",
+  "isomoes",
   "",
   middle-text: "Simple report",
   date: true,

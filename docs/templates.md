@@ -66,7 +66,7 @@ Example usage:
 
 #show: note.with(
   title: "中文笔记示例",
-  author: "isomo",
+  author: "isomoes",
 )
 
 = 引言
@@ -104,7 +104,7 @@ Example usage:
 
 #show: slide.with(
   title: "幻灯片演示",
-  author: "isomo",
+  author: "isomoes",
   date: datetime.today(),
 )
 

@@ -12,7 +12,7 @@
 // #show heading: set text(font: "Source Han Sans SC")
 
 // Document setup
-#set document(title: "周报 isomo", author: "isomo", date: datetime.today())
+#set document(title: "周报 isomoes", author: "isomoes", date: datetime.today())
 
 // Page setup
 #set page(
@@ -52,7 +52,7 @@
 // Title page
 #align(center)[
   #text(size: 18pt, weight: "bold")[
-    周报 isomo (#datetime.today().display("[year]-[month]-[day]"))
+    周报 isomoes (#datetime.today().display("[year]-[month]-[day]"))
   ]
 ]
 

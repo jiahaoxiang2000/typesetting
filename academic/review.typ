@@ -11,7 +11,7 @@
 // )
 
 // Document configuration
-#let document-author = "isomo"
+#let document-author = "isomoes"
 
 // Document setup
 #set document(

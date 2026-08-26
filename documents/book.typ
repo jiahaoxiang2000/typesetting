@@ -2,7 +2,7 @@
 
 // Document configuration
 #let title = "Mathematical Notes"
-#let author = "isomo"
+#let author = "isomoes"
 #let date = datetime.today()
 
 // Custom color scheme inspired by elegant academic style
@@ -208,4 +208,3 @@ The template includes convenient color functions:
 
 // Bibliography (uncomment if references.bib exists)
 // #bibliography(bibliography-file, style: "ieee")
-

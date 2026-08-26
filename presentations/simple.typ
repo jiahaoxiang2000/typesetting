@@ -42,7 +42,7 @@
   = Keep it simple 保持简单
   #v(2em)
 
-  isomo #footnote[github/jiahaoxiang2000]
+  isomoes #footnote[github/jiahaoxiang2000]
 
   #v(2em)
   #datetime.today().display()
